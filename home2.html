@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,15 +24,18 @@
         }
     </script>
 </head>
+
 <body>
     <!-- Navigation (Same as index.html) -->
     <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
-                <img src="assets/images/logo.png" alt="Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
-                <span class="font-serif text-2xl tracking-widest hidden md:block">INSECTA</span>
+                <img src="assets/images/logo.png" alt="Logo"
+                    class="w-8 h-8 object-contain group-hover:scale-110 transition-transform logo-img">
+                <span class="font-serif text-2xl tracking-widest">INSECTA</span>
             </a>
-            <ul class="hidden lg:flex items-center gap-8 text-sm tracking-[0.2em] font-medium uppercase">
+            <ul
+                class="hidden lg:flex items-center gap-3 xl:gap-8 text-[10px] xl:text-sm tracking-widest xl:tracking-[0.2em] font-medium uppercase">
                 <li><a href="index.html" class="nav-link">Home 1</a></li>
                 <li><a href="home2.html" class="nav-link active">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
@@ -41,25 +45,35 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="flex items-center gap-4">
-                <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
-                    <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
-                </button>
-                <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors"><svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg></button>
-                <button id="rtl-toggle" class="hidden sm:block p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary">RTL</button>
-                <div class="hidden md:flex items-center gap-4 ml-4">
+                <div class="hidden lg:flex items-center gap-4">
+                    <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
+                        <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+                    </button>
+                    <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors">
+                        <svg class="theme-icon w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                    </button>
+                    <button id="rtl-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary uppercase">RTL</button>
                     <a href="signup.html" class="btn-premium">SIGNUP</a>
                 </div>
-                <button id="menu-btn" class="lg:hidden p-2 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+                <button id="menu-btn" class="lg:hidden p-2 text-primary hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" viewBox="0 0 24 24">
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M12 18h8"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
     <!-- Mobile Menu (Same as index.html) -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8">
-        <button id="close-menu" class="absolute top-8 right-8 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8">
+        <button id="close-menu" class="absolute top-8 right-8 text-primary"><svg class="w-8 h-8" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg></button>
         <ul class="flex flex-col gap-6 text-2xl font-serif tracking-widest uppercase">
             <li><a href="index.html">Home 1</a></li>
             <li><a href="home2.html">Home 2</a></li>
@@ -69,21 +83,35 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="flex flex-col gap-4 w-full max-w-xs mt-4">
-            <a href="signup.html" class="btn-premium">SIGNUP</a>
+        <div class="flex flex-col gap-6 w-full max-w-xs mt-8">
+            <div class="flex justify-center gap-6">
+                <button id="mobile-theme-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors">
+                    <svg class="theme-icon w-6 h-6 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                </button>
+                <button id="mobile-rtl-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors text-xs font-bold text-primary">RTL</button>
+            </div>
+            <a href="signup.html" class="btn-premium py-4">SIGNUP</a>
         </div>
     </div>
 
     <!-- Cinematic Hero -->
-    <section class="h-[80vh] relative flex items-center justify-center overflow-hidden bg-theme-main">
+    <section class="h-[80vh] relative flex items-center justify-center overflow-hidden bg-black">
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/hero2.png" alt="Beetle Cinematic" class="w-full h-full object-cover scale-105">
-            <div class="absolute inset-0 bg-theme-main/60"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-theme-main/20 via-transparent to-theme-main"></div>
+            <img src="https://images.pexels.com/photos/37129646/pexels-photo-37129646.jpeg" alt="Beetle Cinematic"
+                class="w-full h-full object-cover scale-105 opacity-80">
+            <div class="absolute inset-0 hero-overlay-dark"></div>
+            <div class="absolute inset-0 hero-gradient-dark"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10 text-center fade-in">
-            <h1 class="text-6xl md:text-9xl font-serif mb-6 leading-none text-theme-main">The <span class="italic text-primary">Eternal</span> Archive</h1>
-            <p class="text-lg md:text-2xl tracking-[0.3em] uppercase text-theme-muted mb-12">A Private View Into Nature's Curiosities</p>
+            <h1 class="text-5xl md:text-8xl font-serif mb-6 leading-none hero-text-light">The <span
+                    class="italic text-primary">Eternal</span> Archive</h1>
+            <p class="text-lg md:text-2xl tracking-[0.3em] uppercase hero-text-light mb-8 opacity-90">A Private View
+                Into
+                Nature's Curiosities</p>
+            <p class="hero-text-light max-w-2xl mx-auto mb-12 text-lg leading-relaxed opacity-80">
+                A meticulously curated selection of the world's most rare and beautiful insect specimens,
+                preserved in museum-grade displays for the discerning collector of natural wonders.
+            </p>
             <a href="signup.html" class="btn-premium px-12 py-4">Join the Archive</a>
         </div>
     </section>
@@ -93,33 +121,37 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                 <div>
-                    <h2 class="text-4xl md:text-6xl font-serif mb-12 text-theme-main">The Art of <br>Curation.</h2>
+                    <h2 class="text-4xl md:text-6xl font-serif mb-12 text-theme-main text-center">The Art of Curation.</h2>
                     <div class="space-y-12">
                         <div class="flex gap-8">
                             <span class="text-4xl font-serif text-primary opacity-30">01</span>
                             <div>
                                 <h3 class="text-xl font-serif mb-3 text-theme-main">Sourcing & Selection</h3>
-                                <p class="text-theme-muted leading-relaxed">Each specimen is hand-selected for its physical perfection, symmetry, and historical significance.</p>
+                                <p class="text-theme-muted leading-relaxed">Each specimen is hand-selected for its
+                                    physical perfection, symmetry, and historical significance.</p>
                             </div>
                         </div>
                         <div class="flex gap-8">
                             <span class="text-4xl font-serif text-primary opacity-30">02</span>
                             <div>
                                 <h3 class="text-xl font-serif mb-3 text-theme-main">Rehydration & Setting</h3>
-                                <p class="text-theme-muted leading-relaxed">Weeks of delicate preparation are required to restore the specimen's natural posture without damage.</p>
+                                <p class="text-theme-muted leading-relaxed">Weeks of delicate preparation are required
+                                    to restore the specimen's natural posture without damage.</p>
                             </div>
                         </div>
                         <div class="flex gap-8">
                             <span class="text-4xl font-serif text-primary opacity-30">03</span>
                             <div>
                                 <h3 class="text-xl font-serif mb-3 text-theme-main">Museum Mounting</h3>
-                                <p class="text-theme-muted leading-relaxed">Secured with archival materials in custom-built frames designed to last for generations.</p>
+                                <p class="text-theme-muted leading-relaxed">Secured with archival materials in
+                                    custom-built frames designed to last for generations.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="relative">
-                    <img src="assets/images/about.png" alt="Process" class="w-full museum-border p-3">
+                    <img src="https://images.pexels.com/photos/30493461/pexels-photo-30493461.jpeg" alt="Process"
+                        class="w-full museum-border p-3">
                     <div class="absolute -bottom-10 -left-10 glass p-8 border border-primary hidden md:block">
                         <p class="font-serif text-2xl italic">"Preserving the <br>Fleeting Beauty"</p>
                     </div>
@@ -133,28 +165,32 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <a href="gallery.html" class="relative group h-96 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" alt="Beetles" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                    <img src="https://images.pexels.com/photos/17519300/pexels-photo-17519300.jpeg" alt="Beetles"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
                         <h3 class="text-2xl font-serif text-white">Beetles</h3>
                         <p class="text-xs uppercase tracking-widest opacity-60 text-white">Scarabs & Titans</p>
                     </div>
                 </a>
-                <a href="gallery.html" class="relative group h-96 overflow-hidden mt-8">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Butterflies" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                <a href="gallery.html" class="relative group h-96 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/30563216/pexels-photo-30563216.jpeg" alt="Butterflies"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
                         <h3 class="text-2xl font-serif text-white">Butterflies</h3>
                         <p class="text-xs uppercase tracking-widest opacity-60 text-white">Morphos & Swallowtails</p>
                     </div>
                 </a>
                 <a href="gallery.html" class="relative group h-96 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800" alt="Moths" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                    <img src="https://images.pexels.com/photos/20634683/pexels-photo-20634683.jpeg" alt="Moths"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
                         <h3 class="text-2xl font-serif text-white">Moths</h3>
                         <p class="text-xs uppercase tracking-widest opacity-60 text-white">Lunar & Atlas</p>
                     </div>
                 </a>
-                <a href="gallery.html" class="relative group h-96 overflow-hidden mt-8">
-                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800" alt="Rare" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                <a href="gallery.html" class="relative group h-96 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/36701585/pexels-photo-36701585.jpeg" alt="Rare"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
                         <h3 class="text-2xl font-serif text-white">Rare Gems</h3>
                         <p class="text-xs uppercase tracking-widest opacity-60 text-white">Limited Edition</p>
@@ -170,15 +206,18 @@
             <div class="flex flex-col lg:flex-row items-center gap-20">
                 <div class="lg:w-1/2 relative">
                     <div class="museum-border p-4 relative z-10">
-                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=800" alt="Exhibition Space" class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                        <img src="https://images.pexels.com/photos/27433151/pexels-photo-27433151.jpeg"
+                            alt="Exhibition Space" class="w-full h-[600px] object-cover transition-all duration-1000">
                     </div>
                     <div class="absolute -top-10 -right-10 w-64 h-64 border border-primary/20 -z-0"></div>
                 </div>
                 <div class="lg:w-1/2">
                     <span class="text-primary tracking-[0.4em] uppercase text-xs mb-6 block">London • Summer 2026</span>
-                    <h2 class="text-5xl md:text-7xl font-serif mb-8 text-theme-main">Metamorphosis <br><span class="italic text-primary">In Glass</span></h2>
+                    <h2 class="text-5xl md:text-7xl font-serif mb-8 text-theme-main">Metamorphosis <br><span
+                            class="italic text-primary">In Glass</span></h2>
                     <p class="text-theme-muted text-lg leading-relaxed mb-10">
-                        Our flagship exhibition explores the delicate boundary between life and sculpture. Featuring over 50 never-before-seen specimens from the deep rainforests of the Congo and the Amazon.
+                        Our flagship exhibition explores the delicate boundary between life and sculpture. Featuring
+                        over 50 never-before-seen specimens from the deep rainforests of the Congo and the Amazon.
                     </p>
                     <div class="flex gap-12 border-t border-primary/10 pt-10">
                         <div>
@@ -199,13 +238,15 @@
     <section class="py-32 bg-theme-main">
         <div class="container mx-auto px-6 text-center mb-20">
             <h2 class="text-4xl md:text-6xl font-serif mb-6 text-theme-main">Recent Additions</h2>
-            <p class="text-theme-muted max-w-2xl mx-auto">Explore the latest masterpieces from our London studio, freshly curated for the summer exhibition.</p>
+            <p class="text-theme-muted max-w-2xl mx-auto">Explore the latest masterpieces from our London studio,
+                freshly curated for the summer exhibition.</p>
         </div>
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-theme-main">
                 <div class="gallery-card group">
                     <div class="museum-border mb-6 overflow-hidden aspect-square">
-                        <img src="assets/images/gallery-thumb.png" alt="Art" class="w-full h-full object-cover">
+                        <img src="https://images.pexels.com/photos/18133774/pexels-photo-18133774.jpeg" alt="Art"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="flex justify-between items-center">
                         <h3 class="text-xl font-serif">Lucanus Cervus</h3>
@@ -214,7 +255,8 @@
                 </div>
                 <div class="gallery-card group">
                     <div class="museum-border mb-6 overflow-hidden aspect-square">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Art" class="w-full h-full object-cover">
+                        <img src="https://images.pexels.com/photos/20551279/pexels-photo-20551279.jpeg" alt="Art"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="flex justify-between items-center">
                         <h3 class="text-xl font-serif">Ornithoptera Croesus</h3>
@@ -223,7 +265,8 @@
                 </div>
                 <div class="gallery-card group">
                     <div class="museum-border mb-6 overflow-hidden aspect-square">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800" alt="Art" class="w-full h-full object-cover">
+                        <img src="https://images.pexels.com/photos/30728302/pexels-photo-30728302.jpeg" alt="Art"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="flex justify-between items-center">
                         <h3 class="text-xl font-serif">Actias Luna</h3>
@@ -237,13 +280,20 @@
     <!-- Artist Story Snippet -->
     <section class="py-24 bg-theme-sec relative overflow-hidden">
         <div class="absolute -right-20 top-0 opacity-10">
-            <svg class="w-[600px] h-[600px] fill-primary" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50 Z"/></svg>
+            <svg class="w-[600px] h-[600px] fill-primary" viewBox="0 0 100 100">
+                <path d="M50 0 L100 50 L50 100 L0 50 Z" />
+            </svg>
         </div>
         <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200" alt="Artist" class="w-24 h-24 rounded-full mb-8 border border-primary p-1">
-            <h2 class="text-3xl font-serif mb-6 italic text-primary">"My work is a dialogue between the temporary and the eternal."</h2>
-            <p class="max-w-2xl text-theme-muted mb-10">Master Artist, Elias Thorne, has dedicated 20 years to the preservation of rare coleoptera, blending scientific precision with fine-art aesthetics.</p>
-            <a href="about.html" class="text-sm tracking-widest uppercase border-b border-primary pb-1 hover:text-primary text-theme-main">The Full Story</a>
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"
+                alt="Artist" class="w-24 h-24 rounded-full mb-8 border border-primary p-1">
+            <h2 class="text-3xl font-serif mb-6 italic text-primary">"My work is a dialogue between the temporary and
+                the eternal."</h2>
+            <p class="max-w-2xl text-theme-muted mb-10">Master Artist, Elias Thorne, has dedicated 20 years to the
+                preservation of rare coleoptera, blending scientific precision with fine-art aesthetics.</p>
+            <a href="about.html"
+                class="text-sm tracking-widest uppercase border-b border-primary pb-1 hover:text-primary text-theme-main">The
+                Full Story</a>
         </div>
     </section>
 
@@ -251,11 +301,13 @@
     <section class="py-32 bg-theme-sec">
         <div class="container mx-auto px-6 text-center mb-20">
             <h2 class="text-4xl md:text-6xl font-serif mb-6 text-theme-main">Mastering the Craft</h2>
-            <p class="text-theme-muted max-w-2xl mx-auto">Join our master artisans for an intimate, hands-on experience in the delicate art of specimen preparation and mounting.</p>
+            <p class="text-theme-muted max-w-2xl mx-auto">Join our master artisans for an intimate, hands-on experience
+                in the delicate art of specimen preparation and mounting.</p>
         </div>
         <div class="container mx-auto px-6">
             <div class="relative museum-border overflow-hidden group h-[500px]">
-                <img src="assets/images/workshop.png" alt="Workshop" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                <img src="assets/images/workshop.png" alt="Workshop"
+                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-6">
                     <h3 class="text-3xl md:text-5xl font-serif text-white mb-8">One-Day Masterclass</h3>
                     <div class="flex flex-wrap justify-center gap-12 mb-12">
@@ -279,51 +331,85 @@
     </section>
 
     <!-- Footer (Same as index.html) -->
-    <footer class="bg-theme-main pt-24 pb-12 border-t border-primary/10 text-theme-main">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-left">
-                <div>
+    <!-- Footer -->
+    <footer class="bg-theme-main pt-24 pb-12 border-t border-primary/10">
+        <div class="container mx-auto px-6 text-theme-main">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-1">
                     <div class="flex items-center gap-3 mb-6">
-                        <img src="assets/images/logo.png" alt="Logo" class="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all">
-                        <span class="font-serif text-xl tracking-widest uppercase">INSECTA</span>
+                        <img src="assets/images/logo.png" alt="Logo"
+                            class="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all logo-img footer-logo">
+                        <span class="font-serif text-xl tracking-widest">INSECTA</span>
                     </div>
-                    <p class="opacity-60 text-sm leading-relaxed mb-8">A private archive of the world's most beautiful and rare insect specimens, preserved in museum-grade displays.</p>
+                    <p class="text-theme-muted text-sm leading-relaxed mb-8">
+                        A dedicated art studio focused on the preservation and exhibition of natural wonders through
+                        fine-art taxidermy.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="font-serif text-lg mb-6">Explore</h4>
-                    <ul class="space-y-4 text-sm opacity-60">
-                        <li><a href="gallery.html" class="hover:text-primary">Permanent Collection</a></li>
-                        <li><a href="blog.html" class="hover:text-primary">The Specimen Blog</a></li>
-                        <li><a href="contact.html" class="hover:text-primary">Private Commissions</a></li>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Quick Links</h4>
+                    <ul class="space-y-4 text-sm text-theme-muted">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our Story</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors">Art Collections</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">Preservation Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Workshops</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-serif text-lg mb-6">Studio</h4>
-                    <ul class="space-y-4 text-sm opacity-60">
-                        <li>42 Curio Lane, Kensington</li>
-                        <li>London, SW7 2RL</li>
-                        <li>studio@beetleart.com</li>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Contact</h4>
+                    <ul class="space-y-4 text-sm text-theme-muted">
+                        <li>Studio 12, Museum District, London</li>
+                        <li>hello@beetlestudio.art</li>
+                        <li>+44 (0) 20 7946 0123</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-serif text-lg mb-6">Newsletter</h4>
-                    <p class="text-sm opacity-60 mb-6">Recieve invitations to private viewing events and new collection alerts.</p>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Newsletter</h4>
+                    <p class="text-sm text-theme-muted mb-6">Join our circle for rare specimen alerts and workshop
+                        early-access.</p>
                     <form class="flex border border-primary/20 p-1">
-                        <input type="email" placeholder="Your Email" class="bg-transparent border-none focus:ring-0 text-sm p-2 w-full outline-none" required>
-                        <button type="submit" class="bg-primary text-black px-4 text-xs font-bold uppercase tracking-widest">Join</button>
+                        <input type="email" placeholder="Your Email"
+                            class="bg-transparent border-none focus:ring-0 text-sm p-2 w-full outline-none text-theme-main"
+                            required>
+                        <button type="submit"
+                            class="bg-primary text-black px-4 py-2 text-xs font-bold uppercase tracking-widest">Join</button>
                     </form>
                 </div>
             </div>
-            <p class="text-center text-[10px] uppercase tracking-[0.2em] opacity-40 border-t border-primary/10 pt-12">&copy; 2026 Insecta Studio. All Rights Reserved.</p>
+            <div
+                class="border-t border-primary/10 pt-12 flex justify-center items-center gap-6 text-[10px] uppercase tracking-[0.2em] opacity-40">
+                <p>&copy; 2026 Insecta Studio. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <button id="scroll-to-top" class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg></button>
+    <button id="scroll-to-top"
+        class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black"><svg
+            class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg></button>
 
     <!-- Cart Drawer -->
     <div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
         <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500" id="cart-content">
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500"
+            id="cart-content">
             <div class="p-8 border-b border-primary/10 flex justify-between items-center">
                 <h2 class="font-serif text-2xl tracking-widest uppercase">Your Archive</h2>
                 <button id="close-cart" class="p-2 hover:text-primary transition-colors">
@@ -333,8 +419,11 @@
                 </button>
             </div>
             <div id="cart-items" class="flex-1 overflow-y-auto p-8 space-y-8">
-                <div id="empty-cart-msg" class="h-full flex flex-col items-center justify-center text-center opacity-40">
-                    <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                <div id="empty-cart-msg"
+                    class="h-full flex flex-col items-center justify-center text-center opacity-40">
+                    <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
                     <p class="uppercase tracking-widest text-sm">The archive is empty</p>
                 </div>
             </div>
@@ -349,4 +438,5 @@
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

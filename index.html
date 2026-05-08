@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insecta | Museum Quality Taxidermy</title>
-    <meta name="description" content="Discover professional insect taxidermy art. Framed beetles, butterflies, and ethically sourced specimens for collectors and art enthusiasts.">
+    <meta name="description"
+        content="Discover professional insect taxidermy art. Framed beetles, butterflies, and ethically sourced specimens for collectors and art enthusiasts.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -24,17 +26,20 @@
         }
     </script>
 </head>
+
 <body class="transition-colors duration-500">
     <!-- Navigation -->
     <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
-                <img src="assets/images/logo.png" alt="Insecta Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
-                <span class="font-serif text-2xl tracking-widest hidden md:block">INSECTA</span>
+                <img src="assets/images/logo.png" alt="Insecta Logo"
+                    class="w-8 h-8 object-contain group-hover:scale-110 transition-transform logo-img">
+                <span class="font-serif text-2xl tracking-widest">INSECTA</span>
             </a>
 
             <!-- Desktop Nav -->
-            <ul class="hidden lg:flex items-center gap-8 text-sm tracking-[0.2em] font-medium uppercase">
+            <!-- Desktop Nav -->
+            <ul class="hidden lg:flex items-center gap-3 xl:gap-8 text-[10px] xl:text-sm tracking-widest xl:tracking-[0.2em] font-medium uppercase">
                 <li><a href="index.html" class="nav-link active">Home 1</a></li>
                 <li><a href="home2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
@@ -44,31 +49,35 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
 
-            <div class="flex items-center gap-4">
-                <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
-                    <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
-                </button>
-                <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors">
-                    <svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg>
-                </button>
-                <button id="rtl-toggle" class="hidden sm:block p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary">RTL</button>
-                <div class="hidden md:flex items-center gap-4 ml-4">
+                <div class="hidden lg:flex items-center gap-4">
+                    <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
+                        <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+                    </button>
+                    <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors">
+                        <svg class="theme-icon w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                    </button>
+                    <button id="rtl-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary uppercase">RTL</button>
                     <a href="signup.html" class="btn-premium">SIGNUP</a>
                 </div>
-                <button id="menu-btn" class="lg:hidden p-2 text-primary">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <button id="menu-btn" class="lg:hidden p-2 text-primary hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" viewBox="0 0 24 24">
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M12 18h8"></path>
+                    </svg>
                 </button>
             </div>
         </nav>
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8 text-theme-main">
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8 text-theme-main">
         <button id="close-menu" class="absolute top-8 right-8 text-primary">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
         </button>
         <ul class="flex flex-col gap-6 text-2xl font-serif tracking-widest uppercase">
             <li><a href="index.html" class="hover:text-primary">Home 1</a></li>
@@ -79,32 +88,39 @@
             <li><a href="blog.html" class="hover:text-primary">Blog</a></li>
             <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
         </ul>
-        <div class="flex gap-4 mt-8">
-            <button id="mobile-theme-toggle" class="p-3 border border-primary/30">Theme</button>
-            <button id="mobile-rtl-toggle" class="p-3 border border-primary/30">RTL</button>
-        </div>
-        <div class="flex flex-col gap-4 w-full max-w-xs mt-4">
-            <a href="signup.html" class="btn-premium">SIGNUP</a>
+        <div class="flex flex-col gap-6 w-full max-w-xs mt-8">
+            <div class="flex justify-center gap-6">
+                <button id="mobile-theme-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors">
+                    <svg class="theme-icon w-6 h-6 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                </button>
+                <button id="mobile-rtl-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors text-xs font-bold text-primary">RTL</button>
+            </div>
+            <a href="signup.html" class="btn-premium py-4">SIGNUP</a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center overflow-hidden bg-theme-main">
+    <section class="relative h-screen flex items-center overflow-hidden bg-black">
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/hero.png" alt="Beetle Art" class="w-full h-full object-cover scale-110 opacity-60">
-            <div class="absolute inset-0 bg-theme-main/60"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-theme-main/20 via-transparent to-theme-main"></div>
+            <img src="assets/images/hero.png" alt="Beetle Art" class="w-full h-full object-cover scale-110 opacity-70">
+            <div class="absolute inset-0 hero-overlay-dark"></div>
+            <div class="absolute inset-0 hero-gradient-dark"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10 text-center">
             <div class="max-w-4xl mx-auto fade-in">
-                <span class="text-primary tracking-[0.4em] uppercase text-sm mb-4 block">Premium Taxidermy Art</span>
-                <h1 class="text-5xl md:text-8xl font-serif mb-8 leading-tight text-theme-main">Nature Frozen in <br class="hidden md:block"> <span class="text-primary italic">Elegance</span></h1>
-                <p class="text-lg md:text-xl text-theme-muted mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                    Explore our curated collection of ethically sourced, museum-quality insect specimens framed in artistic perfection.
+                <span class="text-primary tracking-[0.4em] uppercase text-sm mb-4 block font-bold">Premium Taxidermy
+                    Art</span>
+                <h1 class="text-5xl md:text-8xl font-serif mb-8 leading-tight hero-text-light">Nature Frozen in <br
+                        class="hidden md:block"> <span class="text-primary italic">Elegance</span></h1>
+                <p class="text-lg md:text-xl hero-text-muted-light mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    Explore our curated collection of ethically sourced, museum-quality insect specimens framed in
+                    artistic perfection.
                 </p>
                 <div class="flex flex-wrap justify-center gap-6">
                     <a href="signup.html" class="btn-premium">Join the Studio</a>
-                    <a href="about.html" class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-black transition-all tracking-widest uppercase text-sm">Our Story</a>
+                    <a href="about.html"
+                        class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-black transition-all tracking-widest uppercase text-sm">Our
+                        Story</a>
                 </div>
             </div>
         </div>
@@ -118,32 +134,40 @@
                     <h2 class="text-4xl md:text-6xl font-serif mb-4 text-theme-main">The Collection</h2>
                     <p class="text-primary tracking-widest uppercase text-sm">Featured Artworks</p>
                 </div>
-                <a href="gallery.html" class="text-sm tracking-widest uppercase border-b border-primary pb-1 hover:text-primary text-theme-main">View All Specimens</a>
+                <a href="gallery.html"
+                    class="text-sm tracking-widest uppercase border-b border-primary pb-1 hover:text-primary text-theme-main">View
+                    All Specimens</a>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <!-- Card 1 -->
                 <div class="gallery-card group">
                     <div class="museum-border mb-6 overflow-hidden aspect-[4/5]">
-                        <img src="assets/images/gallery-thumb.png" alt="Specimen" class="w-full h-full object-cover">
+                        <img src="https://images.pexels.com/photos/36963561/pexels-photo-36963561.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-serif mb-2 group-hover:text-primary transition-colors text-theme-main">The Emerald Goliath</h3>
+                    <h3 class="text-2xl font-serif mb-2 group-hover:text-primary transition-colors text-theme-main">The
+                        Emerald Goliath</h3>
                     <p class="text-sm text-theme-muted tracking-wider">Framed Beetle • $450</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="gallery-card group mt-12 md:mt-0">
                     <div class="museum-border mb-6 overflow-hidden aspect-[4/5]">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="w-full h-full object-cover">
+                        <img src="https://images.pexels.com/photos/32402700/pexels-photo-32402700.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-serif mb-2 group-hover:text-primary transition-colors text-theme-main">Morpho Didius</h3>
+                    <h3 class="text-2xl font-serif mb-2 group-hover:text-primary transition-colors text-theme-main">
+                        Morpho Didius</h3>
                     <p class="text-sm text-theme-muted tracking-wider">Blue Butterfly • $320</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="gallery-card group">
                     <div class="museum-border mb-6 overflow-hidden aspect-[4/5]">
-                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="w-full h-full object-cover">
+                        <img src="https://images.pexels.com/photos/30719200/pexels-photo-30719200.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-serif mb-2 group-hover:text-primary transition-colors text-theme-main">The Golden Titan</h3>
+                    <h3 class="text-2xl font-serif mb-2 group-hover:text-primary transition-colors text-theme-main">The
+                        Golden Titan</h3>
                     <p class="text-sm text-theme-muted tracking-wider">Rare Specimen • $890</p>
                 </div>
             </div>
@@ -154,13 +178,18 @@
     <section class="py-24 bg-theme-sec border-y border-primary/10">
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
             <div class="lg:w-1/2">
-                <img src="assets/images/about.png" alt="Studio" class="w-full grayscale hover:grayscale-0 transition-all duration-1000 museum-border p-4">
+                <img src="assets/images/about.png" alt="Studio"
+                    class="w-full transition-all duration-1000 museum-border p-4">
             </div>
             <div class="lg:w-1/2">
                 <span class="text-primary tracking-widest uppercase text-sm mb-4 block">Our Philosophy</span>
-                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight text-theme-main">Ethically Sourced, <br>Artistically Preserved.</h2>
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight text-theme-main">Ethically Sourced,
+                    <br>Artistically Preserved.
+                </h2>
                 <p class="text-theme-muted mb-8 leading-relaxed text-lg">
-                    We believe in the beauty of life's transition. All our specimens are sourced from conservation farms and ethical butterfly sanctuaries around the world, supporting local communities and habitat preservation.
+                    We believe in the beauty of life's transition. All our specimens are sourced from conservation farms
+                    and ethical butterfly sanctuaries around the world, supporting local communities and habitat
+                    preservation.
                 </p>
                 <ul class="space-y-4 mb-10 text-theme-main">
                     <li class="flex items-center gap-3">
@@ -191,14 +220,23 @@
             <div class="glass p-12 flex flex-col md:flex-row items-center justify-between gap-12 border-primary/20">
                 <div class="text-left md:w-2/3">
                     <h3 class="text-3xl font-serif mb-4 text-theme-main">Intro to Coleopterology Taxidermy</h3>
-                    <p class="text-theme-muted mb-6">Learn the delicate art of rehydrating, pinning, and mounting giant beetles in this 4-hour masterclass.</p>
+                    <p class="text-theme-muted mb-6">Learn the delicate art of rehydrating, pinning, and mounting giant
+                        beetles in this 4-hour masterclass.</p>
                     <div class="flex flex-wrap gap-8 text-sm uppercase tracking-widest text-theme-main">
                         <div class="flex items-center gap-2">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
                             <span>June 15, 2026</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                </path>
+                            </svg>
                             <span>London Studio</span>
                         </div>
                     </div>
@@ -216,12 +254,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div>
                     <span class="text-primary text-7xl font-serif opacity-20 block mb-4">“</span>
-                    <h2 class="text-4xl font-serif mb-8 text-theme-main">The attention to detail in their butterfly frames is simply museum-grade. A true piece of natural history in my home.</h2>
+                    <h2 class="text-4xl font-serif mb-8 text-theme-main">The attention to detail in their butterfly
+                        frames is simply museum-grade. A true piece of natural history in my home.</h2>
                     <p class="tracking-widest uppercase text-sm text-theme-muted">— Julian Thorne, Art Collector</p>
                 </div>
                 <div class="relative">
-                    <div class="museum-border p-4 grayscale opacity-40">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="Collector" class="w-full">
+                    <div class="museum-border p-4 opacity-80">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600"
+                            alt="Collector" class="w-full">
                     </div>
                 </div>
             </div>
@@ -232,29 +272,47 @@
     <section class="py-32 relative bg-theme-main">
         <div class="absolute inset-0 bg-primary/5"></div>
         <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="text-5xl md:text-7xl font-serif mb-10 max-w-4xl mx-auto leading-tight text-theme-main">Bring the Marvels of the Wild <br><span class="italic text-primary">Into Your Sanctuary.</span></h2>
+            <h2 class="text-5xl md:text-7xl font-serif mb-10 max-w-4xl mx-auto leading-tight text-theme-main">Bring the
+                Marvels of the Wild <br><span class="italic text-primary">Into Your Sanctuary.</span></h2>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <a href="gallery.html" class="btn-premium px-12">Shop Collection</a>
-                <a href="contact.html" class="px-12 py-3 border border-primary text-primary hover:bg-primary hover:text-black transition-all tracking-widest uppercase text-sm text-theme-main">Request Custom Commission</a>
+                <a href="contact.html"
+                    class="px-12 py-3 border border-primary text-primary hover:bg-primary hover:text-black transition-all tracking-widest uppercase text-sm text-theme-main">Request
+                    Custom Commission</a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <!-- Footer -->
     <footer class="bg-theme-main pt-24 pb-12 border-t border-primary/10">
         <div class="container mx-auto px-6 text-theme-main">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
                 <div class="lg:col-span-1">
                     <div class="flex items-center gap-3 mb-6">
-                        <img src="assets/images/logo.png" alt="Logo" class="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all">
+                        <img src="assets/images/logo.png" alt="Logo"
+                            class="w-6 h-6 object-contain transition-all logo-img footer-logo">
                         <span class="font-serif text-xl tracking-widest">INSECTA</span>
                     </div>
                     <p class="text-theme-muted text-sm leading-relaxed mb-8">
-                        A dedicated art studio focused on the preservation and exhibition of natural wonders through fine-art taxidermy.
+                        A dedicated art studio focused on the preservation and exhibition of natural wonders through
+                        fine-art taxidermy.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors"><svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
-                        <a href="#" class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors"><svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        <a href="#"
+                            class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div>
@@ -276,28 +334,37 @@
                 </div>
                 <div>
                     <h4 class="font-serif text-lg mb-6 text-theme-main">Newsletter</h4>
-                    <p class="text-sm text-theme-muted mb-6">Join our circle for rare specimen alerts and workshop early-access.</p>
+                    <p class="text-sm text-theme-muted mb-6">Join our circle for rare specimen alerts and workshop
+                        early-access.</p>
                     <form class="flex border border-primary/20 p-1">
-                        <input type="email" placeholder="Your Email" class="bg-transparent border-none focus:ring-0 text-sm p-2 w-full outline-none text-theme-main" required>
-                        <button type="submit" class="bg-primary text-black px-4 text-xs font-bold uppercase tracking-widest">Join</button>
+                        <input type="email" placeholder="Your Email"
+                            class="bg-transparent border-none focus:ring-0 text-sm p-2 w-full outline-none text-theme-main"
+                            required>
+                        <button type="submit"
+                            class="bg-primary text-black px-4 py-2 text-xs font-bold uppercase tracking-widest">Join</button>
                     </form>
                 </div>
             </div>
-            <div class="border-t border-primary/10 pt-12 flex justify-center items-center gap-6 text-[10px] uppercase tracking-[0.2em] opacity-40">
+            <div
+                class="border-t border-primary/10 pt-12 flex justify-center items-center gap-6 text-[10px] uppercase tracking-[0.2em] opacity-40">
                 <p>&copy; 2026 Insecta Studio. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll to Top -->
-    <button id="scroll-to-top" class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    <button id="scroll-to-top"
+        class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
     </button>
 
     <!-- Cart Drawer -->
     <div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
         <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500" id="cart-content">
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500"
+            id="cart-content">
             <div class="p-8 border-b border-primary/10 flex justify-between items-center">
                 <h2 class="font-serif text-2xl tracking-widest uppercase">Your Archive</h2>
                 <button id="close-cart" class="p-2 hover:text-primary transition-colors">
@@ -306,16 +373,18 @@
                     </svg>
                 </button>
             </div>
-            
+
             <div id="cart-items" class="flex-1 overflow-y-auto p-8 space-y-8">
-                <div id="empty-cart-msg" class="h-full flex flex-col items-center justify-center text-center opacity-40">
+                <div id="empty-cart-msg"
+                    class="h-full flex flex-col items-center justify-center text-center opacity-40">
                     <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                     </svg>
                     <p class="uppercase tracking-widest text-sm">The archive is empty</p>
                 </div>
             </div>
-            
+
             <div class="p-8 border-t border-primary/10 bg-theme-sec">
                 <div class="flex justify-between items-center mb-8">
                     <span class="uppercase tracking-widest text-sm opacity-60">Subtotal</span>
@@ -328,4 +397,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

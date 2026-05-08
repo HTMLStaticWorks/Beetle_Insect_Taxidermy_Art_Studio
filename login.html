@@ -15,12 +15,21 @@
     </script>
 </head>
 <body class="h-screen flex items-center justify-center bg-theme-main overflow-hidden p-6 text-theme-main">
+    <!-- Theme & RTL Toggles -->
+    <div class="fixed top-8 right-8 flex items-center gap-4 z-50">
+        <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors bg-theme-main/50 backdrop-blur-md">
+            <svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg>
+        </button>
+        <button id="rtl-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary bg-theme-main/50 backdrop-blur-md">
+            RTL
+        </button>
+    </div>
 
     <!-- Auth Card -->
     <div class="glass max-w-md w-full p-12 border-theme fade-in">
         <div class="text-center mb-12">
-            <a href="index.html" class="flex flex-col items-center gap-3 group mb-8">
-                <img src="assets/images/logo.png" alt="Insecta Logo" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform">
+            <a href="index.html" class="flex items-center justify-center gap-3 group mb-8">
+                <img src="assets/images/logo.png" alt="Insecta Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
                 <span class="font-serif text-2xl tracking-widest uppercase text-theme-main">INSECTA</span>
             </a>
             <h1 class="text-3xl font-serif mb-2 text-theme-main">Welcome Back</h1>
@@ -33,14 +42,14 @@
                 <input type="email" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
             </div>
             <div class="space-y-2 relative">
-                <div class="flex justify-between items-center">
-                    <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Password</label>
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Password</label>
+                <input type="password" id="password" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main pr-12">
+                <button type="button" class="password-toggle absolute right-4 top-8 text-primary opacity-40 hover:opacity-100 transition-opacity">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                </button>
+                <div class="text-right">
                     <a href="#" class="text-[10px] uppercase tracking-[0.1em] text-primary hover:underline">Forgot?</a>
                 </div>
-                <input type="password" id="password" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
-                <button type="button" class="absolute right-4 top-9 text-primary opacity-40 hover:opacity-100 transition-opacity">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                </button>
             </div>
             <div class="flex items-center gap-3">
                 <input type="checkbox" id="remember" class="accent-primary">
@@ -54,10 +63,6 @@
         </div>
     </div>
 
-    <!-- Decorative Background -->
-    <div class="fixed -bottom-32 -right-32 opacity-10 pointer-events-none">
-        <img src="assets/images/hero.png" alt="" class="w-[600px] grayscale">
-    </div>
 
     <script src="js/main.js"></script>
 </body>

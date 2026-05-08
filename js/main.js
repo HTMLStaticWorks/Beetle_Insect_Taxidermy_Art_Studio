@@ -58,15 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Menu
     const menuBtn = document.getElementById('menu-btn');
+    const closeMenu = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
     
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-            document.body.classList.toggle('overflow-hidden');
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
         });
     }
+
+    if (closeMenu && mobileMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        });
+    }
+
+    mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu?.classList.add('hidden');
+            mobileMenu?.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        });
+    });
 
     // Sticky Header & Active Link
     const header = document.querySelector('header');
@@ -262,6 +280,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isValid) {
                 alert('Thank you! Your message has been received.');
                 form.reset();
+            }
+        });
+    });
+
+    // Password Toggle
+    const passwordToggles = document.querySelectorAll('.password-toggle');
+    passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const input = toggle.parentElement.querySelector('input');
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            
+            const icon = toggle.querySelector('svg');
+            if (type === 'text') {
+                icon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>';
+            } else {
+                icon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
             }
         });
     });

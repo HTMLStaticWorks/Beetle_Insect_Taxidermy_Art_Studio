@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +15,17 @@
         }
     </script>
 </head>
+
 <body>
     <!-- Navigation (Same) -->
-    <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
+    <header class="absolute top-0 w-full z-50 transition-all duration-300 py-6 glass">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
-                <img src="assets/images/logo.png" alt="Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
-                <span class="font-serif text-2xl tracking-widest hidden md:block">INSECTA</span>
+                <img src="assets/images/logo.png" alt="Logo"
+                    class="w-8 h-8 object-contain group-hover:scale-110 transition-transform logo-img">
+                <span class="font-serif text-2xl tracking-widest">INSECTA</span>
             </a>
-            <ul class="hidden lg:flex items-center gap-8 text-sm tracking-[0.2em] font-medium uppercase">
+            <ul class="hidden lg:flex items-center gap-3 xl:gap-8 text-[10px] xl:text-sm tracking-widest xl:tracking-[0.2em] font-medium uppercase">
                 <li><a href="index.html" class="nav-link">Home 1</a></li>
                 <li><a href="home2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
@@ -32,25 +35,35 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="flex items-center gap-4">
-                <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
-                    <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
-                </button>
-                <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors"><svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg></button>
-                <button id="rtl-toggle" class="hidden sm:block p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary">RTL</button>
-                <div class="hidden md:flex items-center gap-4 ml-4">
+                <div class="hidden lg:flex items-center gap-4">
+                    <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
+                        <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+                    </button>
+                    <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors">
+                        <svg class="theme-icon w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                    </button>
+                    <button id="rtl-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary uppercase">RTL</button>
                     <a href="signup.html" class="btn-premium">SIGNUP</a>
                 </div>
-                <button id="menu-btn" class="lg:hidden p-2 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+                <button id="menu-btn" class="lg:hidden p-2 text-primary hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" viewBox="0 0 24 24">
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M12 18h8"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8 text-theme-main">
-        <button id="close-menu" class="absolute top-8 right-8 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8 text-theme-main">
+        <button id="close-menu" class="absolute top-8 right-8 text-primary"><svg class="w-8 h-8" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg></button>
         <ul class="flex flex-col gap-6 text-2xl font-serif tracking-widest uppercase text-theme-main">
             <li><a href="index.html">Home 1</a></li>
             <li><a href="home2.html">Home 2</a></li>
@@ -60,24 +73,37 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="flex flex-col gap-4 w-full max-w-xs mt-4">
-            <a href="signup.html" class="btn-premium">SIGNUP</a>
+        <div class="flex flex-col gap-6 w-full max-w-xs mt-8">
+            <div class="flex justify-center gap-6">
+                <button id="mobile-theme-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors">
+                    <svg class="theme-icon w-6 h-6 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                </button>
+                <button id="mobile-rtl-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors text-xs font-bold text-primary">RTL</button>
+            </div>
+            <a href="signup.html" class="btn-premium py-4">SIGNUP</a>
         </div>
     </div>
 
     <!-- Page Header -->
-    <section class="py-20 bg-theme-sec">
-        <div class="container mx-auto px-6">
-            <h1 class="text-6xl font-serif mb-8 text-center text-theme-main">Permanent Collection</h1>
-            
+    <section class="relative pt-40 pb-24 md:pt-48 md:pb-32 flex items-center justify-center overflow-hidden bg-black text-white">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/gallery-hero.png" alt="Gallery Collection"
+                class="w-full h-full object-cover scale-110 opacity-70">
+            <div class="absolute inset-0 hero-overlay-dark"></div>
+            <div class="absolute inset-0 hero-gradient-dark"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-6xl font-serif mb-8 hero-text-light">Permanent Collection</h1>
+
             <!-- Filters -->
-            <div class="flex flex-wrap justify-center gap-4 md:gap-12 text-xs tracking-[0.3em] uppercase border-y border-theme py-6 text-theme-main">
+            <div
+                class="flex flex-wrap justify-center gap-4 md:gap-12 text-xs tracking-[0.3em] uppercase border-y border-white/20 py-6 text-white/80">
                 <button class="text-primary border-b border-primary pb-1">All Specimens</button>
-                <button class="text-theme-muted hover:text-primary transition-opacity">Beetles</button>
-                <button class="text-theme-muted hover:text-primary transition-opacity">Butterflies</button>
-                <button class="text-theme-muted hover:text-primary transition-opacity">Moths</button>
-                <button class="text-theme-muted hover:text-primary transition-opacity">Rare Gems</button>
-                <button class="text-theme-muted hover:text-primary transition-opacity">Framed Sets</button>
+                <button class="hover:text-primary transition-colors">Beetles</button>
+                <button class="hover:text-primary transition-colors">Butterflies</button>
+                <button class="hover:text-primary transition-colors">Moths</button>
+                <button class="hover:text-primary transition-colors">Rare Gems</button>
+                <button class="hover:text-primary transition-colors">Framed Sets</button>
             </div>
         </div>
     </section>
@@ -88,10 +114,15 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Item 1 -->
                 <div class="gallery-card group">
-                    <div class="museum-border overflow-hidden relative">
-                        <img src="assets/images/gallery-thumb.png" alt="Specimen" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Dynastes Hercules" data-price="850.00" data-image="assets/images/gallery-thumb.png">Add to Archive</button>
+                    <div class="museum-border overflow-hidden relative aspect-square">
+                        <img src="https://images.pexels.com/photos/18366325/pexels-photo-18366325.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Dynastes Hercules" data-price="850.00"
+                                data-image="assets/images/gallery-thumb.png">Add to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -102,10 +133,16 @@
 
                 <!-- Item 2 -->
                 <div class="gallery-card group">
-                    <div class="museum-border overflow-hidden relative aspect-[3/4]">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Butterfly" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Morpho Menelaus" data-price="420.00" data-image="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800">Add to Archive</button>
+                    <div class="museum-border overflow-hidden relative aspect-square">
+                        <img src="https://images.pexels.com/photos/4121226/pexels-photo-4121226.jpeg" alt="Butterfly"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Morpho Menelaus" data-price="420.00"
+                                data-image="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800">Add
+                                to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -117,9 +154,15 @@
                 <!-- Item 3 -->
                 <div class="gallery-card group">
                     <div class="museum-border overflow-hidden relative aspect-square">
-                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" alt="Moth" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Attacus Atlas" data-price="580.00" data-image="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800">Add to Archive</button>
+                        <img src="https://images.pexels.com/photos/19967220/pexels-photo-19967220.jpeg" alt="Moth"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Attacus Atlas" data-price="580.00"
+                                data-image="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800">Add
+                                to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -130,10 +173,16 @@
 
                 <!-- Item 4 -->
                 <div class="gallery-card group">
-                    <div class="museum-border overflow-hidden relative aspect-[4/5]">
-                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800" alt="Beetle" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Phalacrognathus muelleri" data-price="290.00" data-image="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800">Add to Archive</button>
+                    <div class="museum-border overflow-hidden relative aspect-square">
+                        <img src="https://images.pexels.com/photos/7292138/pexels-photo-7292138.jpeg" alt="Beetle"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Phalacrognathus muelleri" data-price="290.00"
+                                data-image="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800">Add
+                                to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -144,10 +193,16 @@
 
                 <!-- Item 5 -->
                 <div class="gallery-card group">
-                    <div class="museum-border overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Actias Luna" data-price="185.00" data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800">Add to Archive</button>
+                    <div class="museum-border overflow-hidden relative aspect-square">
+                        <img src="https://images.pexels.com/photos/6390650/pexels-photo-6390650.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Actias Luna" data-price="185.00"
+                                data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800">Add
+                                to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -159,9 +214,15 @@
                 <!-- Item 6 -->
                 <div class="gallery-card group">
                     <div class="museum-border overflow-hidden relative aspect-square">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Papilio Ulysses" data-price="220.00" data-image="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800">Add to Archive</button>
+                        <img src="https://images.pexels.com/photos/30842863/pexels-photo-30842863.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Papilio Ulysses" data-price="220.00"
+                                data-image="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800">Add
+                                to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -172,10 +233,15 @@
 
                 <!-- Item 7 -->
                 <div class="gallery-card group">
-                    <div class="museum-border overflow-hidden relative aspect-[3/4]">
-                        <img src="assets/images/gallery-thumb.png" alt="Specimen" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Titanus Giganteus" data-price="1200.00" data-image="assets/images/gallery-thumb.png">Add to Archive</button>
+                    <div class="museum-border overflow-hidden relative aspect-square">
+                        <img src="https://images.pexels.com/photos/18024954/pexels-photo-18024954.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Titanus Giganteus" data-price="1200.00"
+                                data-image="assets/images/gallery-thumb.png">Add to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -186,10 +252,16 @@
 
                 <!-- Item 8 -->
                 <div class="gallery-card group">
-                    <div class="museum-border overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors" data-add-to-cart data-name="Chalcothea Resplendens" data-price="140.00" data-image="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800">Add to Archive</button>
+                    <div class="museum-border overflow-hidden relative aspect-square">
+                        <img src="https://images.pexels.com/photos/20561239/pexels-photo-20561239.jpeg" alt="Specimen"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                                class="bg-white text-black px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
+                                data-add-to-cart data-name="Chalcothea Resplendens" data-price="140.00"
+                                data-image="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800">Add
+                                to Archive</button>
                         </div>
                     </div>
                     <div class="pt-6">
@@ -197,34 +269,144 @@
                         <p class="text-xs uppercase tracking-widest opacity-40">Emerald Beetle • $140</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Pagination -->
-            <div class="mt-24 flex justify-center items-center gap-6 text-sm tracking-widest font-bold uppercase">
-                <button class="opacity-20 pointer-events-none">Prev</button>
-                <div class="flex gap-4">
-                    <button class="text-primary underline decoration-2 underline-offset-8">01</button>
-                    <button class="opacity-40 hover:opacity-100">02</button>
-                    <button class="opacity-40 hover:opacity-100">03</button>
-                </div>
-                <button class="hover:text-primary transition-colors">Next</button>
+            </div>
+        </div>
+    </section>
+    <!-- Quote Section -->
+    <section class="py-32 bg-theme-main border-y border-primary/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <svg class="w-12 h-12 text-primary/20 mx-auto mb-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21L14.017 18C14.017 16.899 14.899 16 16 16L19 16C20.101 16 21 16.899 21 18L21 21L14.017 21ZM14.017 21L7.017 21L7.017 18C7.017 16.899 7.899 16 9 16L12 16C13.101 16 14 16.899 14 18L14 21L14.017 21ZM0 18C0 14.686 2.686 12 6 12L7 12C8.101 12 9 12.899 9 14L9 17C9 18.101 8.101 19 7 19L4 19C2.899 19 2 18.101 2 17L2 14C2 13.448 2.448 13 3 13L6 13C6.552 13 7 12.552 7 12L7 9C7 5.686 4.314 3 1 3L0 3C0 1.899 0.899 1 2 1L5 1C8.314 1 11 3.686 11 7L11 8C11 9.101 10.101 10 9 10L6 10C4.899 10 4 9.101 4 8L4 5C4 4.448 4.448 4 5 4L8 4C8.552 4 9 3.552 9 3L9 0L14 0L14 3C14 6.314 11.314 9 8 9L7 9C5.899 9 5 8.101 5 7L5 4C5 2.899 5.899 2 7 2L10 2C11.101 2 12 2.899 12 4L12 7C12 7.552 11.552 8 11 8L8 8C7.448 8 7 8.448 7 9L7 12C7 15.314 9.686 18 13 18L14 18C15.101 18 16 18.899 16 20L16 23C16 24.101 15.101 25 14 25L11 25C7.686 25 5 22.314 5 19L5 18C5 16.899 5.899 16 7 16L10 16C11.101 16 12 16.899 12 18L12 21L5 21L5 24L0 24L0 18Z" opacity="0.1"/>
+                </svg>
+                <p class="text-3xl md:text-4xl font-serif leading-relaxed mb-8 text-theme-main italic">
+                    "Nature is the greatest artist; I am merely its humble curator."
+                </p>
+                <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
+                <span class="text-primary tracking-[0.4em] uppercase text-xs font-bold">Studio Philosophy</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Same) -->
-    <footer class="bg-theme-main py-12 border-t border-primary/10 text-theme-main">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-center text-[10px] uppercase tracking-[0.2em] opacity-40 border-t border-primary/10 pt-12">&copy; 2026 Insecta Studio. All Rights Reserved.</p>
+    <!-- Preservation Section -->
+    <section class="py-24 bg-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.pexels.com/photos/7996883/pexels-photo-7996883.jpeg" alt="Preservation" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-1/2">
+                        <span class="text-primary tracking-widest uppercase text-xs mb-6 block">Our Craft</span>
+                        <h2 class="text-4xl font-serif mb-8 leading-tight">Museum-Grade <span class="italic text-primary">Preservation</span></h2>
+                        <p class="text-white/60 leading-relaxed mb-8">
+                            Every specimen in our collection undergoes a meticulous preservation process. From hydration and pinning to final drying in climate-controlled environments, we ensure the natural brilliance is locked in for lifetimes.
+                        </p>
+                        <div class="space-y-4 text-white/80">
+                            <div class="flex items-center gap-4">
+                                <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                <p class="text-sm tracking-wide uppercase">UV-Protected Museum Glass</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                <p class="text-sm tracking-wide uppercase">Acid-Free Mounting Materials</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                <p class="text-sm tracking-wide uppercase">Sealed Airtight Framing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="museum-border p-3 border-white/20">
+                            <img src="https://images.pexels.com/photos/8096631/pexels-photo-8096631.jpeg" alt="Preservation Process" class="w-full h-96 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-theme-main pt-24 pb-12 border-t border-primary/10">
+        <div class="container mx-auto px-6 text-theme-main">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.png" alt="Logo"
+                            class="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all logo-img footer-logo">
+                        <span class="font-serif text-xl tracking-widest">INSECTA</span>
+                    </div>
+                    <p class="text-theme-muted text-sm leading-relaxed mb-8">
+                        A dedicated art studio focused on the preservation and exhibition of natural wonders through
+                        fine-art taxidermy.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Quick Links</h4>
+                    <ul class="space-y-4 text-sm text-theme-muted">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our Story</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors">Art Collections</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">Preservation Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Contact</h4>
+                    <ul class="space-y-4 text-sm text-theme-muted">
+                        <li>Studio 12, Museum District, London</li>
+                        <li>hello@beetlestudio.art</li>
+                        <li>+44 (0) 20 7946 0123</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Newsletter</h4>
+                    <p class="text-sm text-theme-muted mb-6">Join our circle for rare specimen alerts and workshop
+                        early-access.</p>
+                    <form class="flex border border-primary/20 p-1">
+                        <input type="email" placeholder="Your Email"
+                            class="bg-transparent border-none focus:ring-0 text-sm p-2 w-full outline-none text-theme-main"
+                            required>
+                        <button type="submit"
+                            class="bg-primary text-black px-4 py-2 text-xs font-bold uppercase tracking-widest">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="border-t border-primary/10 pt-12 flex justify-center items-center gap-6 text-[10px] uppercase tracking-[0.2em] opacity-40">
+                <p>&copy; 2026 Insecta Studio. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <button id="scroll-to-top" class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg></button>
+    <button id="scroll-to-top"
+        class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black"><svg
+            class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg></button>
 
     <!-- Cart Drawer -->
     <div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
         <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500" id="cart-content">
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500"
+            id="cart-content">
             <div class="p-8 border-b border-primary/10 flex justify-between items-center">
                 <h2 class="font-serif text-2xl tracking-widest uppercase">Your Archive</h2>
                 <button id="close-cart" class="p-2 hover:text-primary transition-colors">
@@ -234,8 +416,11 @@
                 </button>
             </div>
             <div id="cart-items" class="flex-1 overflow-y-auto p-8 space-y-8">
-                <div id="empty-cart-msg" class="h-full flex flex-col items-center justify-center text-center opacity-40">
-                    <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                <div id="empty-cart-msg"
+                    class="h-full flex flex-col items-center justify-center text-center opacity-40">
+                    <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
                     <p class="uppercase tracking-widest text-sm">The archive is empty</p>
                 </div>
             </div>
@@ -250,4 +435,5 @@
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -14,31 +14,60 @@
         }
     </script>
 </head>
-<body class="h-screen flex items-center justify-center bg-theme-main overflow-hidden p-6 text-theme-main">
+<body class="min-h-screen flex items-center justify-center bg-theme-main p-6 text-theme-main">
+    <!-- Theme & RTL Toggles -->
+    <div class="fixed top-8 right-8 flex items-center gap-4 z-50">
+        <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors bg-theme-main/50 backdrop-blur-md">
+            <svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg>
+        </button>
+        <button id="rtl-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary bg-theme-main/50 backdrop-blur-md">
+            RTL
+        </button>
+    </div>
 
     <!-- Auth Card -->
-    <div class="glass max-w-md w-full p-12 border-theme fade-in">
+    <div class="glass max-w-md w-full p-8 md:p-12 border-theme fade-in max-h-[90vh] overflow-y-auto scrollbar-hide">
         <div class="text-center mb-10">
-            <a href="index.html" class="flex flex-col items-center gap-3 group mb-8">
-                <img src="assets/images/logo.png" alt="Insecta Logo" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform">
+            <a href="index.html" class="flex items-center justify-center gap-3 group mb-8">
+                <img src="assets/images/logo.png" alt="Insecta Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
                 <span class="font-serif text-2xl tracking-widest uppercase text-theme-main">INSECTA</span>
             </a>
             <h1 class="text-3xl font-serif mb-2 text-theme-main">Join the Studio</h1>
             <p class="text-xs uppercase tracking-widest text-theme-muted">Create an account for exclusive updates</p>
         </div>
 
-        <form class="space-y-5">
+        <form class="space-y-4">
             <div class="space-y-1">
-                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Full Name</label>
-                <input type="text" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">First Name</label>
+                <input type="text" placeholder="First Name" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+            </div>
+            <div class="space-y-1">
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Last Name</label>
+                <input type="text" placeholder="Last Name" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
             </div>
             <div class="space-y-1">
                 <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Email Address</label>
-                <input type="email" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+                <input type="email" placeholder="email@example.com" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
             </div>
-            <div class="space-y-1">
+            <div class="space-y-1 relative">
                 <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Password</label>
-                <input type="password" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+                <input type="password" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main pr-12">
+                <button type="button" class="password-toggle absolute right-4 top-8 text-primary opacity-40 hover:opacity-100 transition-opacity">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-1 relative">
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Confirm Password</label>
+                <input type="password" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main pr-12">
+                <button type="button" class="password-toggle absolute right-4 top-8 text-primary opacity-40 hover:opacity-100 transition-opacity">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
             </div>
             <div class="flex items-center gap-3">
                 <input type="checkbox" id="terms" required class="accent-primary">
@@ -54,7 +83,7 @@
 
     <!-- Decorative Background -->
     <div class="fixed -bottom-32 -left-32 opacity-10 pointer-events-none rotate-180">
-        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="" class="w-[600px] grayscale">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="" class="w-[600px]">
     </div>
 
     <script src="js/main.js"></script>
