@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive | Insecta Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#c5a059', secondary: '#064e3b', dark: '#0a0a0a', light: '#f5f5dc' } } }
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation (Same) -->
+    <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/images/logo.png" alt="Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
+                <span class="font-serif text-2xl tracking-widest hidden md:block uppercase">INSECTA</span>
+            </a>
+            <ul class="hidden lg:flex items-center gap-8 text-sm tracking-[0.2em] font-medium uppercase">
+                <li><a href="index.html" class="nav-link">Home 1</a></li>
+                <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
+                    <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+                </button>
+                <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors"><svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg></button>
+                <button id="rtl-toggle" class="hidden sm:block p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary">RTL</button>
+                <div class="hidden md:flex items-center gap-4 ml-4">
+                    <a href="signup.html" class="btn-premium">SIGNUP</a>
+                </div>
+                <button id="menu-btn" class="lg:hidden p-2 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8 text-theme-main">
+        <button id="close-menu" class="absolute top-8 right-8 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <ul class="flex flex-col gap-6 text-2xl font-serif tracking-widest uppercase text-theme-main">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="flex flex-col gap-4 w-full max-w-xs mt-4">
+            <a href="signup.html" class="btn-premium">SIGNUP</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="py-20 bg-theme-sec">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl">
+                <h1 class="text-6xl font-serif mb-6 text-theme-main">The <span class="italic text-primary">Specimen</span> Blog</h1>
+                <p class="text-theme-muted text-lg leading-relaxed max-w-2xl">Reflections on nature, the science of preservation, and the art of curation from our London studio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="pb-24 bg-theme-sec">
+        <div class="container mx-auto px-6">
+            <div class="glass flex flex-col lg:flex-row border-theme overflow-hidden">
+                <div class="lg:w-1/2 overflow-hidden h-96 lg:h-auto">
+                    <img src="assets/images/about.png" alt="Featured" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                </div>
+                <div class="lg:w-1/2 p-12 flex flex-col justify-center">
+                    <span class="text-primary tracking-widest uppercase text-xs mb-4">Ethical Curation • June 12, 2026</span>
+                    <h2 class="text-4xl font-serif mb-6 hover:text-primary transition-colors cursor-pointer leading-tight text-theme-main">The Delicate Art of Rehydrating the Titan Beetle</h2>
+                    <p class="text-theme-muted mb-8 leading-relaxed">Discover the complex process behind preparing the world's largest beetles for display, and why patience is the most important tool in an entomologist's kit.</p>
+                    <a href="#" class="text-primary font-bold tracking-widest uppercase text-xs border-b border-primary/30 pb-1 w-fit hover:border-primary transition-all">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-24 bg-theme-main">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-20">
+                <!-- Blog Posts -->
+                <div class="lg:w-2/3 space-y-20">
+                    <!-- Post 1 -->
+                    <article class="group">
+                        <div class="overflow-hidden mb-8 museum-border">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=1200" alt="Post" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <span class="text-primary tracking-widest uppercase text-xs mb-4 block">Conservation • May 28, 2026</span>
+                        <h3 class="text-3xl font-serif mb-4 group-hover:text-primary transition-colors cursor-pointer">Supporting Rainforest Preservation through Ethical Farming</h3>
+                        <p class="opacity-60 mb-6 leading-relaxed">How butterfly farms in South America are creating a sustainable economic model that protects thousands of acres of primary rainforest from deforestation.</p>
+                        <a href="#" class="text-sm font-bold tracking-widest uppercase border-b border-primary/30 pb-1 group-hover:border-primary transition-all">Continue Reading</a>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="group">
+                        <div class="overflow-hidden mb-8 museum-border">
+                            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200" alt="Post" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <span class="text-primary tracking-widest uppercase text-xs mb-4 block">Science • May 15, 2026</span>
+                        <h3 class="text-3xl font-serif mb-4 group-hover:text-primary transition-colors cursor-pointer">Identifying Rare Iridescent Specimens</h3>
+                        <p class="opacity-60 mb-6 leading-relaxed">A deep dive into the structural coloration of the Morpho butterfly and how its wings create brilliant blues without using any pigment.</p>
+                        <a href="#" class="text-sm font-bold tracking-widest uppercase border-b border-primary/30 pb-1 group-hover:border-primary transition-all">Continue Reading</a>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="lg:w-1/3 space-y-16">
+                    <!-- Search -->
+                    <div class="glass p-8 border border-primary/10">
+                        <h4 class="font-serif text-xl mb-6">Search Archive</h4>
+                        <div class="relative">
+                            <input type="text" placeholder="Type to search..." class="w-full bg-transparent border-b border-primary/30 py-3 outline-none focus:border-primary transition-colors">
+                            <svg class="w-5 h-5 absolute right-0 top-3 text-primary opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="glass p-8 border border-primary/10">
+                        <h4 class="font-serif text-xl mb-6">Categories</h4>
+                        <ul class="space-y-4 text-sm uppercase tracking-widest">
+                            <li class="flex justify-between hover:text-primary cursor-pointer transition-colors"><span>Preservation</span> <span class="opacity-40">(12)</span></li>
+                            <li class="flex justify-between hover:text-primary cursor-pointer transition-colors"><span>Conservation</span> <span class="opacity-40">(08)</span></li>
+                            <li class="flex justify-between hover:text-primary cursor-pointer transition-colors"><span>Entomology</span> <span class="opacity-40">(15)</span></li>
+                            <li class="flex justify-between hover:text-primary cursor-pointer transition-colors"><span>Studio Life</span> <span class="opacity-40">(05)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="glass p-8 border border-primary/10">
+                        <h4 class="font-serif text-xl mb-6">Popular Tags</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="px-4 py-2 border border-primary/10 text-[10px] uppercase tracking-widest hover:border-primary transition-colors">Beetles</a>
+                            <a href="#" class="px-4 py-2 border border-primary/10 text-[10px] uppercase tracking-widest hover:border-primary transition-colors">Ethics</a>
+                            <a href="#" class="px-4 py-2 border border-primary/10 text-[10px] uppercase tracking-widest hover:border-primary transition-colors">London</a>
+                            <a href="#" class="px-4 py-2 border border-primary/10 text-[10px] uppercase tracking-widest hover:border-primary transition-colors">Nature</a>
+                            <a href="#" class="px-4 py-2 border border-primary/10 text-[10px] uppercase tracking-widest hover:border-primary transition-colors">Butterfly</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-20 flex items-center gap-6 text-xs tracking-widest font-bold uppercase">
+                <button class="opacity-20">Prev</button>
+                <div class="flex gap-6">
+                    <button class="text-primary underline decoration-2 underline-offset-4">01</button>
+                    <button class="opacity-40 hover:opacity-100">02</button>
+                    <button class="opacity-40 hover:opacity-100">03</button>
+                </div>
+                <button class="hover:text-primary">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-theme-main py-12 border-t border-primary/10 text-theme-main">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-center text-[10px] uppercase tracking-[0.2em] opacity-40 border-t border-primary/10 pt-12">&copy; 2026 Insecta Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
+        <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500" id="cart-content">
+            <div class="p-8 border-b border-primary/10 flex justify-between items-center">
+                <h2 class="font-serif text-2xl tracking-widest uppercase">Your Archive</h2>
+                <button id="close-cart" class="p-2 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto p-8 space-y-8">
+                <div id="empty-cart-msg" class="h-full flex flex-col items-center justify-center text-center opacity-40">
+                    <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                    <p class="uppercase tracking-widest text-sm">The archive is empty</p>
+                </div>
+            </div>
+            <div class="p-8 border-t border-primary/10 bg-theme-sec">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="uppercase tracking-widest text-sm opacity-60">Subtotal</span>
+                    <span id="cart-total" class="font-serif text-2xl text-primary">$0.00</span>
+                </div>
+                <button class="btn-premium w-full py-4 text-center">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

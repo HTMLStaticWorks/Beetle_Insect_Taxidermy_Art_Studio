@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibition | Insecta Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#c5a059',
+                        secondary: '#064e3b',
+                        dark: '#0a0a0a',
+                        light: '#f5f5dc',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation (Same as index.html) -->
+    <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/images/logo.png" alt="Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
+                <span class="font-serif text-2xl tracking-widest hidden md:block">INSECTA</span>
+            </a>
+            <ul class="hidden lg:flex items-center gap-8 text-sm tracking-[0.2em] font-medium uppercase">
+                <li><a href="index.html" class="nav-link">Home 1</a></li>
+                <li><a href="home2.html" class="nav-link active">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
+                    <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+                </button>
+                <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors"><svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg></button>
+                <button id="rtl-toggle" class="hidden sm:block p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary">RTL</button>
+                <div class="hidden md:flex items-center gap-4 ml-4">
+                    <a href="signup.html" class="btn-premium">SIGNUP</a>
+                </div>
+                <button id="menu-btn" class="lg:hidden p-2 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu (Same as index.html) -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8">
+        <button id="close-menu" class="absolute top-8 right-8 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <ul class="flex flex-col gap-6 text-2xl font-serif tracking-widest uppercase">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="flex flex-col gap-4 w-full max-w-xs mt-4">
+            <a href="signup.html" class="btn-premium">SIGNUP</a>
+        </div>
+    </div>
+
+    <!-- Cinematic Hero -->
+    <section class="h-[80vh] relative flex items-center justify-center overflow-hidden bg-theme-main">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/hero2.png" alt="Beetle Cinematic" class="w-full h-full object-cover scale-105">
+            <div class="absolute inset-0 bg-theme-main/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-theme-main/20 via-transparent to-theme-main"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center fade-in">
+            <h1 class="text-6xl md:text-9xl font-serif mb-6 leading-none text-theme-main">The <span class="italic text-primary">Eternal</span> Archive</h1>
+            <p class="text-lg md:text-2xl tracking-[0.3em] uppercase text-theme-muted mb-12">A Private View Into Nature's Curiosities</p>
+            <a href="signup.html" class="btn-premium px-12 py-4">Join the Archive</a>
+        </div>
+    </section>
+
+    <!-- Custom Process -->
+    <section class="py-32 bg-theme-main">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-serif mb-12 text-theme-main">The Art of <br>Curation.</h2>
+                    <div class="space-y-12">
+                        <div class="flex gap-8">
+                            <span class="text-4xl font-serif text-primary opacity-30">01</span>
+                            <div>
+                                <h3 class="text-xl font-serif mb-3 text-theme-main">Sourcing & Selection</h3>
+                                <p class="text-theme-muted leading-relaxed">Each specimen is hand-selected for its physical perfection, symmetry, and historical significance.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8">
+                            <span class="text-4xl font-serif text-primary opacity-30">02</span>
+                            <div>
+                                <h3 class="text-xl font-serif mb-3 text-theme-main">Rehydration & Setting</h3>
+                                <p class="text-theme-muted leading-relaxed">Weeks of delicate preparation are required to restore the specimen's natural posture without damage.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8">
+                            <span class="text-4xl font-serif text-primary opacity-30">03</span>
+                            <div>
+                                <h3 class="text-xl font-serif mb-3 text-theme-main">Museum Mounting</h3>
+                                <p class="text-theme-muted leading-relaxed">Secured with archival materials in custom-built frames designed to last for generations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="assets/images/about.png" alt="Process" class="w-full museum-border p-3">
+                    <div class="absolute -bottom-10 -left-10 glass p-8 border border-primary hidden md:block">
+                        <p class="font-serif text-2xl italic">"Preserving the <br>Fleeting Beauty"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="py-24 bg-theme-sec">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="gallery.html" class="relative group h-96 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" alt="Beetles" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif text-white">Beetles</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60 text-white">Scarabs & Titans</p>
+                    </div>
+                </a>
+                <a href="gallery.html" class="relative group h-96 overflow-hidden mt-8">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Butterflies" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif text-white">Butterflies</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60 text-white">Morphos & Swallowtails</p>
+                    </div>
+                </a>
+                <a href="gallery.html" class="relative group h-96 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800" alt="Moths" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif text-white">Moths</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60 text-white">Lunar & Atlas</p>
+                    </div>
+                </a>
+                <a href="gallery.html" class="relative group h-96 overflow-hidden mt-8">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800" alt="Rare" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif text-white">Rare Gems</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60 text-white">Limited Edition</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Exhibitions -->
+    <section class="py-32 bg-theme-main overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="lg:w-1/2 relative">
+                    <div class="museum-border p-4 relative z-10">
+                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=800" alt="Exhibition Space" class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute -top-10 -right-10 w-64 h-64 border border-primary/20 -z-0"></div>
+                </div>
+                <div class="lg:w-1/2">
+                    <span class="text-primary tracking-[0.4em] uppercase text-xs mb-6 block">London • Summer 2026</span>
+                    <h2 class="text-5xl md:text-7xl font-serif mb-8 text-theme-main">Metamorphosis <br><span class="italic text-primary">In Glass</span></h2>
+                    <p class="text-theme-muted text-lg leading-relaxed mb-10">
+                        Our flagship exhibition explores the delicate boundary between life and sculpture. Featuring over 50 never-before-seen specimens from the deep rainforests of the Congo and the Amazon.
+                    </p>
+                    <div class="flex gap-12 border-t border-primary/10 pt-10">
+                        <div>
+                            <p class="text-2xl font-serif text-theme-main">15 June</p>
+                            <p class="text-xs uppercase tracking-widest opacity-40">Opening Night</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif text-theme-main">Royal Gallery</p>
+                            <p class="text-xs uppercase tracking-widest opacity-40">Location</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="py-32 bg-theme-main">
+        <div class="container mx-auto px-6 text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6 text-theme-main">Recent Additions</h2>
+            <p class="text-theme-muted max-w-2xl mx-auto">Explore the latest masterpieces from our London studio, freshly curated for the summer exhibition.</p>
+        </div>
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-theme-main">
+                <div class="gallery-card group">
+                    <div class="museum-border mb-6 overflow-hidden aspect-square">
+                        <img src="assets/images/gallery-thumb.png" alt="Art" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-serif">Lucanus Cervus</h3>
+                        <span class="text-primary">$280</span>
+                    </div>
+                </div>
+                <div class="gallery-card group">
+                    <div class="museum-border mb-6 overflow-hidden aspect-square">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Art" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-serif">Ornithoptera Croesus</h3>
+                        <span class="text-primary">$550</span>
+                    </div>
+                </div>
+                <div class="gallery-card group">
+                    <div class="museum-border mb-6 overflow-hidden aspect-square">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800" alt="Art" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-serif">Actias Luna</h3>
+                        <span class="text-primary">$195</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artist Story Snippet -->
+    <section class="py-24 bg-theme-sec relative overflow-hidden">
+        <div class="absolute -right-20 top-0 opacity-10">
+            <svg class="w-[600px] h-[600px] fill-primary" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50 Z"/></svg>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200" alt="Artist" class="w-24 h-24 rounded-full mb-8 border border-primary p-1">
+            <h2 class="text-3xl font-serif mb-6 italic text-primary">"My work is a dialogue between the temporary and the eternal."</h2>
+            <p class="max-w-2xl text-theme-muted mb-10">Master Artist, Elias Thorne, has dedicated 20 years to the preservation of rare coleoptera, blending scientific precision with fine-art aesthetics.</p>
+            <a href="about.html" class="text-sm tracking-widest uppercase border-b border-primary pb-1 hover:text-primary text-theme-main">The Full Story</a>
+        </div>
+    </section>
+
+    <!-- Workshop Experience -->
+    <section class="py-32 bg-theme-sec">
+        <div class="container mx-auto px-6 text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6 text-theme-main">Mastering the Craft</h2>
+            <p class="text-theme-muted max-w-2xl mx-auto">Join our master artisans for an intimate, hands-on experience in the delicate art of specimen preparation and mounting.</p>
+        </div>
+        <div class="container mx-auto px-6">
+            <div class="relative museum-border overflow-hidden group h-[500px]">
+                <img src="assets/images/workshop.png" alt="Workshop" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-6">
+                    <h3 class="text-3xl md:text-5xl font-serif text-white mb-8">One-Day Masterclass</h3>
+                    <div class="flex flex-wrap justify-center gap-12 mb-12">
+                        <div class="text-white">
+                            <p class="text-2xl font-serif text-primary">08</p>
+                            <p class="text-[10px] uppercase tracking-widest opacity-60">Limited Seats</p>
+                        </div>
+                        <div class="text-white">
+                            <p class="text-2xl font-serif text-primary">$350</p>
+                            <p class="text-[10px] uppercase tracking-widest opacity-60">Per Person</p>
+                        </div>
+                        <div class="text-white">
+                            <p class="text-2xl font-serif text-primary">All</p>
+                            <p class="text-[10px] uppercase tracking-widest opacity-60">Tools Provided</p>
+                        </div>
+                    </div>
+                    <a href="signup.html" class="btn-premium px-12 py-4">Reserve Your Bench</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-theme-main pt-24 pb-12 border-t border-primary/10 text-theme-main">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-left">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.png" alt="Logo" class="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all">
+                        <span class="font-serif text-xl tracking-widest uppercase">INSECTA</span>
+                    </div>
+                    <p class="opacity-60 text-sm leading-relaxed mb-8">A private archive of the world's most beautiful and rare insect specimens, preserved in museum-grade displays.</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li><a href="gallery.html" class="hover:text-primary">Permanent Collection</a></li>
+                        <li><a href="blog.html" class="hover:text-primary">The Specimen Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">Private Commissions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Studio</h4>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li>42 Curio Lane, Kensington</li>
+                        <li>London, SW7 2RL</li>
+                        <li>studio@beetleart.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Newsletter</h4>
+                    <p class="text-sm opacity-60 mb-6">Recieve invitations to private viewing events and new collection alerts.</p>
+                    <form class="flex border border-primary/20 p-1">
+                        <input type="email" placeholder="Your Email" class="bg-transparent border-none focus:ring-0 text-sm p-2 w-full outline-none" required>
+                        <button type="submit" class="bg-primary text-black px-4 text-xs font-bold uppercase tracking-widest">Join</button>
+                    </form>
+                </div>
+            </div>
+            <p class="text-center text-[10px] uppercase tracking-[0.2em] opacity-40 border-t border-primary/10 pt-12">&copy; 2026 Insecta Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg></button>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
+        <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500" id="cart-content">
+            <div class="p-8 border-b border-primary/10 flex justify-between items-center">
+                <h2 class="font-serif text-2xl tracking-widest uppercase">Your Archive</h2>
+                <button id="close-cart" class="p-2 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto p-8 space-y-8">
+                <div id="empty-cart-msg" class="h-full flex flex-col items-center justify-center text-center opacity-40">
+                    <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                    <p class="uppercase tracking-widest text-sm">The archive is empty</p>
+                </div>
+            </div>
+            <div class="p-8 border-t border-primary/10 bg-theme-sec">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="uppercase tracking-widest text-sm opacity-60">Subtotal</span>
+                    <span id="cart-total" class="font-serif text-2xl text-primary">$0.00</span>
+                </div>
+                <button class="btn-premium w-full py-4 text-center">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

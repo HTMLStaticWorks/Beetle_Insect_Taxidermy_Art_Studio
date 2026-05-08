@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --primary: #c5a059;
+    --primary-dark: #a68545;
+    --secondary: #064e3b;
+    --dark: #0a0a0a;
+    --light: #f5f5dc;
+    --accent: #d4af37;
+}
+
+[data-theme='dark'] {
+    --bg-main: #0a0a0a;
+    --bg-sec: #121212;
+    --text-main: #f5f5dc;
+    --text-muted: rgba(245, 245, 220, 0.6);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(197, 160, 89, 0.2);
+    --primary: #c5a059;
+}
+
+[data-theme='light'] {
+    --bg-main: #fcfcfc;
+    --bg-sec: #f3f3f0;
+    --text-main: #1a1a1a;
+    --text-muted: rgba(26, 26, 26, 0.7);
+    --card-bg: #ffffff;
+    --border-color: rgba(166, 133, 69, 0.4);
+    --primary: #a68545; /* Darker gold for better contrast on light */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.glass {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+}
+
+.bg-theme-main { background-color: var(--bg-main); }
+.bg-theme-sec { background-color: var(--bg-sec); }
+.bg-theme-overlay { background-color: var(--bg-main); }
+.text-theme-main { color: var(--text-main); }
+.text-theme-muted { color: var(--text-muted); }
+.border-theme { border-color: var(--border-color); }
+
+.museum-border {
+    border: 1px solid var(--primary);
+    position: relative;
+}
+
+.museum-border::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid var(--primary);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.btn-premium {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #c5a059;
+    color: #000000 !important;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-premium:hover {
+    background-color: #d4af37;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+    transform: translateY(-2px);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RTL Support */
+[dir='rtl'] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir='rtl'] .ml-auto { margin-left: 0; margin-right: auto; }
+[dir='rtl'] .mr-auto { margin-right: 0; margin-left: auto; }
+[dir='rtl'] .text-left { text-align: right; }
+[dir='rtl'] .text-right { text-align: left; }
+[dir='rtl'] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+}
+
+/* Animations */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+    transform: translateY(-8px);
+}
+
+.text-gold-gradient {
+    background: linear-gradient(to right, #c5a059, #d4af37, #c5a059);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: goldShine 3s linear infinite;
+}
+
+@keyframes goldShine {
+    to { background-position: 200% center; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-card img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-icon {
+    color: var(--primary);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+#theme-toggle:hover .theme-icon {
+    transform: rotate(45deg);
+    color: var(--accent);
+}

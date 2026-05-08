@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Insecta Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#c5a059', secondary: '#064e3b', dark: '#0a0a0a', light: '#f5f5dc' } } }
+        }
+    </script>
+</head>
+<body class="h-screen flex items-center justify-center bg-theme-main overflow-hidden p-6 text-theme-main">
+
+    <!-- Auth Card -->
+    <div class="glass max-w-md w-full p-12 border-theme fade-in">
+        <div class="text-center mb-12">
+            <a href="index.html" class="flex flex-col items-center gap-3 group mb-8">
+                <img src="assets/images/logo.png" alt="Insecta Logo" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform">
+                <span class="font-serif text-2xl tracking-widest uppercase text-theme-main">INSECTA</span>
+            </a>
+            <h1 class="text-3xl font-serif mb-2 text-theme-main">Welcome Back</h1>
+            <p class="text-xs uppercase tracking-widest text-theme-muted">Enter your credentials to access the studio</p>
+        </div>
+
+        <form class="space-y-6">
+            <div class="space-y-2">
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Email Address</label>
+                <input type="email" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+            </div>
+            <div class="space-y-2 relative">
+                <div class="flex justify-between items-center">
+                    <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Password</label>
+                    <a href="#" class="text-[10px] uppercase tracking-[0.1em] text-primary hover:underline">Forgot?</a>
+                </div>
+                <input type="password" id="password" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+                <button type="button" class="absolute right-4 top-9 text-primary opacity-40 hover:opacity-100 transition-opacity">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                </button>
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="remember" class="accent-primary">
+                <label for="remember" class="text-xs text-theme-muted">Keep me logged in</label>
+            </div>
+            <button type="submit" class="btn-premium w-full py-4 mt-4">Login to Studio</button>
+        </form>
+
+        <div class="mt-12 text-center text-xs tracking-widest text-theme-muted">
+            Don't have an account? <a href="signup.html" class="text-primary hover:underline ml-2">Register Now</a>
+        </div>
+    </div>
+
+    <!-- Decorative Background -->
+    <div class="fixed -bottom-32 -right-32 opacity-10 pointer-events-none">
+        <img src="assets/images/hero.png" alt="" class="w-[600px] grayscale">
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

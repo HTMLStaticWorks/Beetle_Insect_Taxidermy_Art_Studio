@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Studio | Insecta Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#c5a059', secondary: '#064e3b', dark: '#0a0a0a', light: '#f5f5dc' } } }
+        }
+    </script>
+</head>
+<body class="h-screen flex items-center justify-center bg-theme-main overflow-hidden p-6 text-theme-main">
+
+    <!-- Auth Card -->
+    <div class="glass max-w-md w-full p-12 border-theme fade-in">
+        <div class="text-center mb-10">
+            <a href="index.html" class="flex flex-col items-center gap-3 group mb-8">
+                <img src="assets/images/logo.png" alt="Insecta Logo" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform">
+                <span class="font-serif text-2xl tracking-widest uppercase text-theme-main">INSECTA</span>
+            </a>
+            <h1 class="text-3xl font-serif mb-2 text-theme-main">Join the Studio</h1>
+            <p class="text-xs uppercase tracking-widest text-theme-muted">Create an account for exclusive updates</p>
+        </div>
+
+        <form class="space-y-5">
+            <div class="space-y-1">
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Full Name</label>
+                <input type="text" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+            </div>
+            <div class="space-y-1">
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Email Address</label>
+                <input type="email" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+            </div>
+            <div class="space-y-1">
+                <label class="text-[10px] uppercase tracking-[0.2em] text-theme-muted">Password</label>
+                <input type="password" required class="w-full bg-transparent border border-theme px-4 py-3 outline-none focus:border-primary transition-colors text-theme-main">
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="terms" required class="accent-primary">
+                <label for="terms" class="text-xs text-theme-muted">I agree to the <a href="#" class="text-primary underline">Terms & Conditions</a></label>
+            </div>
+            <button type="submit" class="btn-premium w-full py-4 mt-2">Create Account</button>
+        </form>
+
+        <div class="mt-10 text-center text-xs tracking-widest text-theme-muted">
+            Already have an account? <a href="login.html" class="text-primary hover:underline ml-2">Login Here</a>
+        </div>
+    </div>
+
+    <!-- Decorative Background -->
+    <div class="fixed -bottom-32 -left-32 opacity-10 pointer-events-none rotate-180">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="" class="w-[600px] grayscale">
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

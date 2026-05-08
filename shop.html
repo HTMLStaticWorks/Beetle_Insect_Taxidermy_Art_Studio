@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Insecta Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#c5a059', secondary: '#064e3b', dark: '#0a0a0a', light: '#f5f5dc' } } }
+        }
+    </script>
+</head>
+<body class="bg-theme-main text-theme-main transition-colors duration-500">
+    <!-- Navigation -->
+    <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/images/logo.png" alt="Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
+                <span class="font-serif text-2xl tracking-widest hidden md:block uppercase">INSECTA</span>
+            </a>
+            <ul class="hidden lg:flex items-center gap-8 text-sm tracking-[0.2em] font-medium uppercase">
+                <li><a href="index.html" class="nav-link">Home 1</a></li>
+                <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
+                    <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+                </button>
+                <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors"><svg class="theme-icon w-5 h-5 fill-primary" viewBox="0 0 24 24"></svg></button>
+                <button id="rtl-toggle" class="hidden sm:block p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary">RTL</button>
+                <div class="hidden md:flex items-center gap-4 ml-4">
+                    <a href="signup.html" class="btn-premium">SIGNUP</a>
+                </div>
+                <button id="menu-btn" class="lg:hidden p-2 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-theme-overlay hidden flex-col items-center justify-center text-center p-6 gap-8 text-theme-main">
+        <button id="close-menu" class="absolute top-8 right-8 text-primary"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <ul class="flex flex-col gap-6 text-2xl font-serif tracking-widest uppercase">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="flex flex-col gap-4 w-full max-w-xs mt-4">
+            <a href="signup.html" class="btn-premium">SIGNUP</a>
+        </div>
+    </div>
+
+    <!-- Shop Header -->
+    <section class="py-20 bg-theme-sec">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-6xl font-serif mb-6 text-theme-main">Artisan <span class="italic text-primary">Boutique</span></h1>
+            <p class="text-theme-muted max-w-2xl mx-auto">Collect rare specimens and hand-crafted taxidermy frames for your private sanctuary.</p>
+        </div>
+    </section>
+
+    <!-- Shop Main -->
+    <section class="py-20 bg-theme-main">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Sidebar Filters -->
+                <aside class="lg:w-1/4 space-y-12">
+                    <div>
+                        <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Categories</h3>
+                        <ul class="space-y-4 text-sm uppercase tracking-widest text-theme-muted">
+                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                <span>Hercules Beetles</span>
+                                <span class="text-xs">(12)</span>
+                            </li>
+                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                <span>Morpho Butterflies</span>
+                                <span class="text-xs">(08)</span>
+                            </li>
+                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                <span>Rare Titanoids</span>
+                                <span class="text-xs">(05)</span>
+                            </li>
+                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                <span>Framed Collections</span>
+                                <span class="text-xs">(15)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Price Range</h3>
+                        <div class="space-y-4">
+                            <input type="range" class="w-full accent-primary" min="100" max="2000">
+                            <div class="flex justify-between text-xs opacity-60">
+                                <span>$100</span>
+                                <span>$2,000+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Frame Style</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
+                                <input type="checkbox" class="accent-primary"> Minimalist Black
+                            </label>
+                            <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
+                                <input type="checkbox" class="accent-primary"> Vintage Brass
+                            </label>
+                            <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
+                                <input type="checkbox" class="accent-primary"> Museum Shadowbox
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <div class="lg:w-3/4">
+                    <div class="flex justify-between items-center mb-12 text-xs tracking-widest uppercase">
+                        <span class="opacity-40">Showing 12 of 45 products</span>
+                        <select class="bg-transparent border-none outline-none text-primary cursor-pointer">
+                            <option class="bg-theme-main text-theme-main">Sort: Latest</option>
+                            <option class="bg-theme-main text-theme-main">Price: Low to High</option>
+                            <option class="bg-theme-main text-theme-main">Price: High to Low</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        <!-- Product 1 -->
+                        <div class="group">
+                            <div class="museum-border overflow-hidden relative aspect-[3/4]">
+                                <img src="assets/images/gallery-thumb.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                    <button class="bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors" data-add-to-cart data-name="Dynastes Hercules (L)" data-price="420.00" data-image="assets/images/gallery-thumb.png">Add to Collection</button>
+                                </div>
+                                <div class="absolute top-4 right-4 bg-primary text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">New</div>
+                            </div>
+                            <div class="pt-6 text-center">
+                                <h3 class="text-xl font-serif mb-2 text-theme-main">Dynastes Hercules (L)</h3>
+                                <p class="text-primary font-bold">$420.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="group">
+                            <div class="museum-border overflow-hidden relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                    <button class="bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors" data-add-to-cart data-name="Morpho Didius Pair" data-price="650.00" data-image="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800">Add to Collection</button>
+                                </div>
+                            </div>
+                            <div class="pt-6 text-center">
+                                <h3 class="text-xl font-serif mb-2 text-theme-main">Morpho Didius Pair</h3>
+                                <p class="text-primary font-bold">$650.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="group">
+                            <div class="museum-border overflow-hidden relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                    <button class="bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors" data-add-to-cart data-name="Titanus Giganteus" data-price="1150.00" data-image="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800">Add to Collection</button>
+                                </div>
+                            </div>
+                            <div class="pt-6 text-center">
+                                <h3 class="text-xl font-serif mb-2 text-theme-main">Titanus Giganteus</h3>
+                                <p class="text-primary font-bold">$1,150.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="group">
+                            <div class="museum-border overflow-hidden relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                    <button class="bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors" data-add-to-cart data-name="Actias Luna Frame" data-price="280.00" data-image="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800">Add to Collection</button>
+                                </div>
+                            </div>
+                            <div class="pt-6 text-center">
+                                <h3 class="text-xl font-serif mb-2 text-theme-main">Actias Luna Frame</h3>
+                                <p class="text-primary font-bold">$280.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="group">
+                            <div class="museum-border overflow-hidden relative aspect-[3/4]">
+                                <img src="assets/images/gallery-thumb.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                    <button class="bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors" data-add-to-cart data-name="Green Rose Chafer" data-price="125.00" data-image="assets/images/gallery-thumb.png">Add to Collection</button>
+                                </div>
+                            </div>
+                            <div class="pt-6 text-center">
+                                <h3 class="text-xl font-serif mb-2 text-theme-main">Green Rose Chafer</h3>
+                                <p class="text-primary font-bold">$125.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="group">
+                            <div class="museum-border overflow-hidden relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                    <button class="bg-white text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors" data-add-to-cart data-name="Papilio Ulysses" data-price="195.00" data-image="https://images.unsplash.com/photo-1541339907198-e08759dfc3f3?auto=format&fit=crop&q=80&w=800">Add to Collection</button>
+                                </div>
+                            </div>
+                            <div class="pt-6 text-center">
+                                <h3 class="text-xl font-serif mb-2 text-theme-main">Papilio Ulysses</h3>
+                                <p class="text-primary font-bold">$195.00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-20 flex justify-center items-center gap-6 text-xs font-bold tracking-widest uppercase">
+                        <button class="opacity-20 pointer-events-none">Prev</button>
+                        <div class="flex gap-6">
+                            <button class="text-primary underline decoration-2 underline-offset-8">01</button>
+                            <button class="opacity-40 hover:opacity-100">02</button>
+                            <button class="opacity-40 hover:opacity-100">03</button>
+                        </div>
+                        <button class="hover:text-primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-theme-main pt-24 pb-12 border-t border-theme text-theme-main">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.png" alt="Logo" class="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all">
+                        <span class="font-serif text-xl tracking-widest uppercase">INSECTA</span>
+                    </div>
+                    <p class="text-theme-muted text-sm leading-relaxed mb-8">Artistically preserving the wonders of the natural world through museum-grade entomological taxidermy.</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Shop</h4>
+                    <ul class="space-y-4 text-sm text-theme-muted">
+                        <li><a href="#" class="hover:text-primary">All Products</a></li>
+                        <li><a href="#" class="hover:text-primary">Custom Frames</a></li>
+                        <li><a href="#" class="hover:text-primary">Collectors' Sets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Support</h4>
+                    <ul class="space-y-4 text-sm text-theme-muted">
+                        <li><a href="#" class="hover:text-primary">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-primary">Refund Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">Contact Studio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6 text-theme-main">Join the Studio</h4>
+                    <p class="text-sm text-theme-muted mb-6">Register for early access to rare specimen drops.</p>
+                    <a href="signup.html" class="btn-premium w-full text-center">SIGNUP</a>
+                </div>
+            </div>
+            <p class="text-center text-[10px] uppercase tracking-[0.2em] opacity-40 border-t border-primary/10 pt-12">&copy; 2026 Insecta Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 z-40 bg-primary/20 backdrop-blur-md p-3 border border-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary hover:text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg></button>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
+        <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-theme-main shadow-2xl flex flex-col transform translate-x-full transition-transform duration-500" id="cart-content">
+            <div class="p-8 border-b border-primary/10 flex justify-between items-center">
+                <h2 class="font-serif text-2xl tracking-widest uppercase">Your Archive</h2>
+                <button id="close-cart" class="p-2 hover:text-primary transition-colors">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto p-8 space-y-8">
+                <div id="empty-cart-msg" class="h-full flex flex-col items-center justify-center text-center opacity-40">
+                    <svg class="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                    <p class="uppercase tracking-widest text-sm">The archive is empty</p>
+                </div>
+            </div>
+            <div class="p-8 border-t border-primary/10 bg-theme-sec">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="uppercase tracking-widest text-sm opacity-60">Subtotal</span>
+                    <span id="cart-total" class="font-serif text-2xl text-primary">$0.00</span>
+                </div>
+                <button class="btn-premium w-full py-4 text-center">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
