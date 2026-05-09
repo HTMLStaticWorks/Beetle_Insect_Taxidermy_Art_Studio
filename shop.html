@@ -18,7 +18,13 @@
 
 <body class="bg-theme-main text-theme-main transition-colors duration-500">
     <!-- Navigation -->
-    <header class="absolute top-0 w-full z-50 transition-all duration-300 py-6 glass">
+    <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
+        <div class="absolute top-4 right-20 lg:static lg:flex items-center gap-2 lg:gap-4 z-[60]">
+            <button id="theme-toggle" class="utility-btn !w-8 !h-8 lg:!w-[var(--btn-height)] lg:!h-[var(--btn-height)]">
+                <svg class="theme-icon stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+            </button>
+            <button id="rtl-toggle" class="utility-btn !w-8 !h-8 lg:!w-[var(--btn-height)] lg:!h-[var(--btn-height)] text-[10px] font-bold uppercase">RTL</button>
+        </div>
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
                 <img src="assets/images/logo.png" alt="Logo"
@@ -36,14 +42,10 @@
             </ul>
             <div class="flex items-center gap-4">
                 <div class="hidden lg:flex items-center gap-4">
-                    <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
-                        <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                    <button id="cart-btn" class="utility-btn relative">
+                        <svg class="stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
                         <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
                     </button>
-                    <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors">
-                        <svg class="theme-icon w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
-                    </button>
-                    <button id="rtl-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary uppercase">RTL</button>
                     <a href="signup.html" class="btn-premium">SIGNUP</a>
                 </div>
                 <button id="menu-btn" class="lg:hidden p-2 text-primary hover:text-white transition-colors duration-300">
@@ -69,16 +71,16 @@
             <li><a href="home2.html">Home 2</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="shop.html">Shop</a></li>
+            <li><a href="shop.html" class="active">Shop</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="flex flex-col gap-6 w-full max-w-xs mt-8">
             <div class="flex justify-center gap-6">
-                <button id="mobile-theme-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors">
-                    <svg class="theme-icon w-6 h-6 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                <button id="mobile-theme-toggle" class="mobile-utility-btn">
+                    <svg class="theme-icon stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
                 </button>
-                <button id="mobile-rtl-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors text-xs font-bold text-primary">RTL</button>
+                <button id="mobile-rtl-toggle" class="mobile-utility-btn text-xs font-bold">RTL</button>
             </div>
             <a href="signup.html" class="btn-premium py-4">SIGNUP</a>
         </div>
@@ -102,54 +104,76 @@
     <!-- Shop Main -->
     <section class="py-20 bg-theme-main">
         <div class="container mx-auto px-6">
+            <!-- Filter Toggle (Mobile Only) -->
+            <div class="lg:hidden flex justify-between items-center mb-8 bg-theme-sec p-4 border border-primary/10">
+                <button id="filter-toggle" class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                    </svg>
+                    Filter Specimens
+                </button>
+                <span class="text-[10px] uppercase tracking-widest opacity-40">12 Products</span>
+            </div>
+
             <div class="flex flex-col lg:flex-row gap-12">
                 <!-- Sidebar Filters -->
-                <aside class="lg:w-1/4 space-y-12">
-                    <div>
-                        <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Categories</h3>
-                        <ul class="space-y-4 text-sm uppercase tracking-widest text-theme-muted">
-                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
-                                <span>Hercules Beetles</span>
-                                <span class="text-xs">(12)</span>
-                            </li>
-                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
-                                <span>Morpho Butterflies</span>
-                                <span class="text-xs">(08)</span>
-                            </li>
-                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
-                                <span>Rare Titanoids</span>
-                                <span class="text-xs">(05)</span>
-                            </li>
-                            <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
-                                <span>Framed Collections</span>
-                                <span class="text-xs">(15)</span>
-                            </li>
-                        </ul>
-                    </div>
+                <aside id="shop-sidebar" class="fixed inset-0 z-[70] bg-theme-overlay hidden lg:relative lg:inset-auto lg:z-auto lg:bg-transparent lg:block lg:w-1/4">
+                    <div class="absolute right-0 top-0 h-full w-full max-w-xs bg-theme-main p-8 overflow-y-auto lg:p-0 lg:max-w-none lg:static lg:h-auto lg:bg-transparent space-y-12">
+                        <div class="lg:hidden flex justify-between items-center mb-8 border-b border-primary/10 pb-4">
+                            <h2 class="font-serif text-2xl tracking-widest uppercase">Filters</h2>
+                            <button id="close-filters" class="text-primary">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Categories</h3>
+                            <ul class="space-y-4 text-sm uppercase tracking-widest text-theme-muted">
+                                <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                    <span>Hercules Beetles</span>
+                                    <span class="text-xs">(12)</span>
+                                </li>
+                                <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                    <span>Morpho Butterflies</span>
+                                    <span class="text-xs">(08)</span>
+                                </li>
+                                <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                    <span>Rare Titanoids</span>
+                                    <span class="text-xs">(05)</span>
+                                </li>
+                                <li class="flex justify-between items-center group cursor-pointer hover:text-primary">
+                                    <span>Framed Collections</span>
+                                    <span class="text-xs">(15)</span>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div>
-                        <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Price Range</h3>
-                        <div class="space-y-4">
-                            <input type="range" class="w-full accent-primary" min="100" max="2000">
-                            <div class="flex justify-between text-xs opacity-60">
-                                <span>$100</span>
-                                <span>$2,000+</span>
+                        <div>
+                            <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Price Range</h3>
+                            <div class="space-y-4">
+                                <input type="range" class="w-full accent-primary" min="100" max="2000">
+                                <div class="flex justify-between text-xs opacity-60">
+                                    <span>$100</span>
+                                    <span>$2,000+</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Frame Style</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
-                                <input type="checkbox" class="accent-primary"> Minimalist Black
-                            </label>
-                            <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
-                                <input type="checkbox" class="accent-primary"> Vintage Brass
-                            </label>
-                            <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
-                                <input type="checkbox" class="accent-primary"> Museum Shadowbox
-                            </label>
+                        <div>
+                            <h3 class="text-xl font-serif mb-6 border-b border-primary/20 pb-2">Frame Style</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
+                                    <input type="checkbox" class="accent-primary"> Minimalist Black
+                                </label>
+                                <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
+                                    <input type="checkbox" class="accent-primary"> Vintage Brass
+                                </label>
+                                <label class="flex items-center gap-3 text-sm opacity-70 cursor-pointer hover:text-primary">
+                                    <input type="checkbox" class="accent-primary"> Museum Shadowbox
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </aside>
@@ -329,7 +353,7 @@
                             class="w-10 h-10 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
                             <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24">
                                 <path
-                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                             </svg>
                         </a>
                         <a href="#"

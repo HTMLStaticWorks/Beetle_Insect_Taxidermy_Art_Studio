@@ -17,11 +17,21 @@
 <body>
     <!-- Navigation (Same) -->
     <header class="sticky top-0 w-full z-50 transition-all duration-300 py-6 glass">
+        <div class="absolute top-4 right-20 lg:static lg:flex items-center gap-2 lg:gap-4 z-[60]">
+            <button id="theme-toggle" class="utility-btn !w-8 !h-8 lg:!w-[var(--btn-height)] lg:!h-[var(--btn-height)]">
+                <svg class="theme-icon stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+            </button>
+            <button id="rtl-toggle" class="utility-btn !w-8 !h-8 lg:!w-[var(--btn-height)] lg:!h-[var(--btn-height)] text-[10px] font-bold uppercase">RTL</button>
+        </div>
+
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
-                <img src="assets/images/logo.png" alt="Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform logo-img">
+                <img src="assets/images/logo.png" alt="Insecta Logo"
+                    class="w-8 h-8 object-contain group-hover:scale-110 transition-transform logo-img">
                 <span class="font-serif text-2xl tracking-widest uppercase">INSECTA</span>
             </a>
+
+            <!-- Desktop Nav -->
             <ul class="hidden lg:flex items-center gap-3 xl:gap-8 text-[10px] xl:text-sm tracking-widest xl:tracking-[0.2em] font-medium uppercase">
                 <li><a href="index.html" class="nav-link">Home 1</a></li>
                 <li><a href="home2.html" class="nav-link">Home 2</a></li>
@@ -31,15 +41,13 @@
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
             </ul>
+
+            <div class="flex items-center gap-4">
                 <div class="hidden lg:flex items-center gap-4">
-                    <button id="cart-btn" class="p-2 border border-primary/30 hover:border-primary transition-colors relative">
-                        <svg class="w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                    <button id="cart-btn" class="utility-btn relative">
+                        <svg class="stroke-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
                         <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
                     </button>
-                    <button id="theme-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors">
-                        <svg class="theme-icon w-5 h-5 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
-                    </button>
-                    <button id="rtl-toggle" class="p-2 border border-primary/30 hover:border-primary transition-colors text-[10px] font-bold text-primary uppercase">RTL</button>
                     <a href="signup.html" class="btn-premium">SIGNUP</a>
                 </div>
                 <button id="menu-btn" class="lg:hidden p-2 text-primary hover:text-white transition-colors duration-300">
@@ -63,14 +71,14 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="shop.html">Shop</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <div class="flex flex-col gap-6 w-full max-w-xs mt-8">
             <div class="flex justify-center gap-6">
-                <button id="mobile-theme-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors">
-                    <svg class="theme-icon w-6 h-6 stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
+                <button id="mobile-theme-toggle" class="mobile-utility-btn">
+                    <svg class="theme-icon stroke-primary" fill="none" viewBox="0 0 24 24"></svg>
                 </button>
-                <button id="mobile-rtl-toggle" class="p-4 border border-primary/30 hover:border-primary transition-colors text-xs font-bold text-primary">RTL</button>
+                <button id="mobile-rtl-toggle" class="mobile-utility-btn text-xs font-bold">RTL</button>
             </div>
             <a href="signup.html" class="btn-premium py-4">SIGNUP</a>
         </div>
@@ -96,8 +104,8 @@
                 <!-- Contact Form -->
                 <div>
                     <h2 class="text-3xl font-serif mb-12 uppercase tracking-widest">Send a Message</h2>
-                    <form id="contact-form" class="space-y-8">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <form id="contact-form" class="space-y-10">
+                        <div class="space-y-10">
                             <div class="space-y-2">
                                 <label class="text-[10px] uppercase tracking-[0.2em] opacity-40">Full Name</label>
                                 <input type="text" placeholder="John Doe" required class="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-primary transition-colors">
@@ -106,21 +114,21 @@
                                 <label class="text-[10px] uppercase tracking-[0.2em] opacity-40">Email Address</label>
                                 <input type="email" placeholder="john@example.com" required class="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-primary transition-colors">
                             </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-[0.2em] opacity-40">Subject</label>
+                                <select class="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-primary transition-colors appearance-none">
+                                    <option class="bg-theme-main text-theme-main">General Inquiry</option>
+                                    <option class="bg-theme-main text-theme-main">Commission Request</option>
+                                    <option class="bg-theme-main text-theme-main">Workshop Booking</option>
+                                    <option class="bg-theme-main text-theme-main">Wholesale/Trade</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-[0.2em] opacity-40">Message</label>
+                                <textarea rows="5" placeholder="How can we help you?" required class="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-primary transition-colors resize-none"></textarea>
+                            </div>
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-[0.2em] opacity-40">Subject</label>
-                            <select class="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-primary transition-colors appearance-none">
-                                <option class="bg-theme-main text-theme-main">General Inquiry</option>
-                                <option class="bg-theme-main text-theme-main">Commission Request</option>
-                                <option class="bg-theme-main text-theme-main">Workshop Booking</option>
-                                <option class="bg-theme-main text-theme-main">Wholesale/Trade</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-[0.2em] opacity-40">Message</label>
-                            <textarea rows="5" placeholder="How can we help you?" required class="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-primary transition-colors resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="btn-premium w-full md:w-fit">Send Inquiry</button>
+                        <button type="submit" class="btn-premium w-full py-4">Send Inquiry</button>
                     </form>
                 </div>
 
@@ -141,6 +149,14 @@
                                     <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                     <span>+44 (0) 20 7946 0123</span>
                                 </div>
+                            </div>
+                            <div class="mt-8 pt-8 border-t border-primary/10 flex gap-4">
+                                <a href="#" class="w-12 h-12 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                                    <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                </a>
+                                <a href="#" class="w-12 h-12 border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-colors">
+                                    <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
                             </div>
                         </div>
                     </div>

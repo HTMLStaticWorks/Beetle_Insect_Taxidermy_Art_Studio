@@ -86,6 +86,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Shop Filters Mobile Toggle
+    const filterToggle = document.getElementById('filter-toggle');
+    const closeFilters = document.getElementById('close-filters');
+    const shopSidebar = document.getElementById('shop-sidebar');
+
+    if (filterToggle && shopSidebar) {
+        filterToggle.addEventListener('click', () => {
+            shopSidebar.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        });
+    }
+
+    if (closeFilters && shopSidebar) {
+        closeFilters.addEventListener('click', () => {
+            shopSidebar.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+    }
+
     // Sticky Header & Active Link
     const header = document.querySelector('header');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -94,28 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         // Sticky behavior
         if (window.scrollY > 50) {
-            header?.classList.add('py-3', 'shadow-2xl');
+            header?.classList.add('py-3', 'shadow-2xl', 'bg-theme-main/90', 'backdrop-blur-lg');
             header?.classList.remove('py-6');
         } else {
-            header?.classList.remove('py-3', 'shadow-2xl');
+            header?.classList.remove('py-3', 'shadow-2xl', 'bg-theme-main/90', 'backdrop-blur-lg');
             header?.classList.add('py-6');
         }
-
-        // Active link highlighting
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current) && current !== '') {
-                link.classList.add('active');
-            }
-        });
     });
 
     // Scroll to Top
