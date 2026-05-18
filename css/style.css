@@ -321,3 +321,19 @@ h1, h2, h3, h4, h5, h6, .font-serif {
     transform: rotate(45deg);
     color: var(--accent);
 }
+
+/* Hamburger & Close Menu Custom Hover Styles and Animations */
+#menu-btn, #close-menu {
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#menu-btn:hover {
+    color: var(--text-main) !important;
+    transform: scale(1.1);
+}
+
+#close-menu:hover {
+    color: var(--text-main) !important;
+    transform: scale(1.1) rotate(90deg);
+}
+
